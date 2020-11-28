@@ -7,7 +7,7 @@ SITEURL = ''
 THEME = "theme/"
 INDEX_SAVE_AS = "blog.html"
 
-PATH = 'content'
+PATH = 'pelican/content'
 ARTICLE_PATHS = ['posts']
 ARTICLE_URL = "posts/{slug}.html"
 ARTICLE_SAVE_AS = "posts/{slug}.html"
