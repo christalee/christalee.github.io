@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %} {{ page.title }} {% endblock %}
+
+{% block content %}
+
+<!-- About-->
+<section class="resume-section" id="about">
+  <div class="resume-section-content">
+    <h1 class="mb-0">
+      Christalee
+      <span class="text-primary">Bieber</span>
+    </h1>
+    <div class="subheading mb-5">
+      Brooklyn, NY · <a href="{{ SITEURL }}files/cbieber_resume_1020.pdf">Resume</a> ·
+      <a href="mailto:christalee@teallabs.org">christalee@teallabs.org</a>
+    </div>
+    <p class="lead mb-5">{{ page.content }}</p>
+  </div>
+</section>
+<hr class="m-0" />
+
+{% include "projects.html" %}
+
+<section class="resume-section" id="blog_preview">
+  <div class="resume-section-content">
+    <h2 class="mb-5">Blog</h2>
+    <ol id="post-list">
+      {% for article in articles if "portfolio" not in article.tags %}
+      {% if loop.index <= 3 %} <li>
+        <article class="hentry">
+          <header>
+            <h4 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h4>
+          </header>
+          <footer class="post-info">
+            <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
+            <p>
+              Tags: {% for tag in article.tags %}
+              <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+              {% if not loop.last %},{% endif %}
+              {% endfor %}
+            </p>
+          </footer><!-- /.post-info -->
+          <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
+        </article>
+        </li>
+        {% endif %}
+        {% endfor %}
+    </ol><!-- /#post-list -->
+    <a href="/blog.html">All Posts</a>
+  </div>
+</section>
+{% endblock %}

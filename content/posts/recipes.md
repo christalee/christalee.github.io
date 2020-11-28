@@ -1,0 +1,6 @@
+title: Family Cookbook
+tags: portfolio, hobbies, programming
+date: December 2019
+img: recipe.png
+
+My extended family likes to cook, especially at the holidays, and frequently I hear, “What’s the recipe for X? Ask Y, they’ll know.” And then the recipe will be dredged up from memory, or a dusty cookbook, or someone’s text history, or photos of a dusty cookbook from someone’s text history. Fed up with this precarious system, I decided to create a family cookbook, collecting recipes and menus from holiday feasts, ragged binders of handwritten recipes, and even punchcards tucked into my parents’ first Joy of Cooking (now mine). I made some tweaks to the LaTeX [cuisine](https://ctan.org/pkg/cuisine?lang=en) package, primarily to move the recipe step numbers next to the steps, and used it for a first draft of the [cookbook](https://github.com/christalee/recipes/blob/master/tex/cookbook.pdf). I anticipate adding more content in the future; if you would like to make your own cookbook with this template, check out my [style file](https://github.com/christalee/recipes/blob/master/tex/cb_recipe.sty) and/or modified [cuisine.sty](https://github.com/christalee/recipes/blob/master/tex/cb_cuisine.sty).

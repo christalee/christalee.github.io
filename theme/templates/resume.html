@@ -1,0 +1,47 @@
+{% extends "page.html" %}
+
+{% block nav %}
+
+{% set navigation = [
+('Experience', "#experience"),
+('Education', "#education"),
+('Skills', "#skills"),
+('Interests', '#interests'),
+] %}
+
+{% for title, link in navigation %}
+<li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ link }}">{{ title }}</a></li>
+{% endfor %}
+<li class="nav-item"><a class="nav-link js-scroll-trigger" href="{{ SITEURL }}/index.html">Home</a></li>
+
+{% endblock %}
+
+{% block content %}
+
+{{ super() }}
+<section class="resume-section" id="blog_preview">
+  <div class="resume-section-content">
+    <ol id="post-list">
+      {% for article in articles if "hobbies" in article.tags %}
+      <li>
+        <article class="hentry">
+          <header>
+            <h4 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h4>
+          </header>
+          <footer class="post-info">
+            <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
+            <p>
+              Tags: {% for tag in article.tags %}
+              <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
+              {% if not loop.last %},{% endif %}
+              {% endfor %}
+            </p>
+          </footer><!-- /.post-info -->
+          <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
+        </article>
+      </li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+{% endblock %}

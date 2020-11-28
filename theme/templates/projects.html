@@ -1,0 +1,28 @@
+{% block content %}
+<!-- Projects-->
+<section class="resume-section" id="projects">
+  <div class="resume-section-content">
+    <h2 class="mb-5">Projects</h2>
+    <ul id="hexGrid">
+      {% for article in articles %}
+      {% if "portfolio" in article.tags %}
+      <li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="{{ article.url }}">
+            {% if article.img %}
+            <img src="{{ SITEURL }}/images/{{ article.img }}" alt="" />
+            {% else %}
+            <img src="{{ SITEURL }}/images/default.png" alt="" />
+            {% endif %}
+            <h1>{{article.title}}</h1>
+            <p>{{article.tags|join(", ")}}</p>
+          </a>
+        </div>
+      </li>
+      {% endif %}
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+<hr class="m-0" />
+{% endblock %}
