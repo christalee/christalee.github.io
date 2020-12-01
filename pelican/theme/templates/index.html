@@ -17,8 +17,7 @@
             <time class="published" datetime="{{ article.date.isoformat() }}"> {{ article.locale_date }} </time>
             <div class="tags"> Tags:
               {% for tag in article.tags %}
-              <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>
-              {% if not loop.last %},{% endif %}
+              <a href="{{ SITEURL }}/{{ tag.url }}">{{ tag }}</a>{% if not loop.last %},{% endif %}
               {% endfor %}
             </div>
           </footer><!-- /.post-info -->

@@ -1,4 +1,4 @@
-title: Buffer the Vampire Slayer
+title: Buffer the Slayer
 date: April 2019
 tags: portfolio, programming
 img: buffer-adventure.png

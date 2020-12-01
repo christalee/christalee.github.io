@@ -1,6 +1,5 @@
 ---
 title: Introduction to Programming
-author: Christalee
 tags: computer science, programming, education
 summary: Colleagues often consult me for advice on teaching programming as fledgling or non-programmers. Here are capsule reviews of various tools and approaches for beginners.
 ---

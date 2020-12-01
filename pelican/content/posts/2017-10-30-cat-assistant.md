@@ -1,6 +1,5 @@
 ---
 title: Cat Assistant
-author: Christalee
 tags: interviewing, jokes
 summary: Inspired by the hilarious interview question, "What words would your family use to describe you?"
 ---

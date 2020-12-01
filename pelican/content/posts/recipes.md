@@ -1,5 +1,5 @@
 title: Family Cookbook
-tags: portfolio, hobbies, programming
+tags: portfolio, hobbies, programming, publishing
 date: December 2019
 img: recipe.png
 

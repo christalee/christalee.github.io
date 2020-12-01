@@ -1,6 +1,5 @@
 ---
 title: CTE Programming in 2017
-author: Christalee
 tags: computer science, programming, education
 summary: Anyone teaching computer-related topics in 2017 knows that: the range of skills, compensation levels, and working conditions in "tech" is huge and unpredictable; and, trying to future-proof your students is impossible.
 ---

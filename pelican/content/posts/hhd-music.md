@@ -1,5 +1,5 @@
 title: High Holy Days Music
-tags: portfolio, hobbies, programming
+tags: portfolio, hobbies, programming, publishing
 date: September 2019
 img: hhd.png
 

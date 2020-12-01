@@ -1,6 +1,5 @@
 ---
 title: Teaching Materials Selection in High School
-author: Christalee
 tags: materials science, education, design, prototyping
 summary: Materials selection and Ashby charts are rarely covered in depth for most STEM students or teachers, so I wanted to give them strong guidance. Here's my advice.
 ---

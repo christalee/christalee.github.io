@@ -1,6 +1,5 @@
 ---
 title: A Tale of 2 PDs
-author: Christalee
 tags: making, programming, education
 summary: Recently I attended two professional development events nominally aimed at "maker educators." They ended up being pretty different experiences, though!
 ---
