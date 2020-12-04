@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Intro to Sensors</title>
+</head>
+<body>
+<h1>Intro to Sensors</h1>
+<img src="sensors_cover.jpg" width=500px />
+<h3>Class Information</h3>
+<p><strong>Format:</strong> 2 weekday evening sessions, 2 hours each</p>
+<p><strong>Most Recently Taught:</strong> July 18 & 25, 2012</p>
+<p><strong>Instructors:</strong> Christalee Bieber & Daniel Bergey</p>
+<p><strong>Description:</strong> Sensors help us hear what the world around us has to say.  In this class you will build circuits that measure temperature, light, and motion.  We will cover voltage and current control, and use transistors and op-amps (amplifiers) to drive LEDs and lightbulbs.  Our examples will all be analog, but the techniques are also useful for connecting sensors to microcontrollers.</p>
+
+<p>Bring your own project ideas, or use ours to start.  Each session will have time to work on your project with help from instructors.  No electronics background is required.  All ages welcome; students 13 and under should be accompanied by an adult.</p>
+
+<h3>Learning Objectives</h3>
+<p>Upon completing this course, students should be capable of:</p>
+<ul>
+<li>designing & analyzing circuits containing sensor elements</li>
+<li>finding key information on electronic components' datasheets</li>
+<li>using transistors and op-amps to control voltage and current in sensor circuits</li>
+<li>reading circuit schematics & resistor values</li>
+<li>building example circuits on breadboards</li>
+</ul> 
+
+<h3>Class 1 Outline (<a href="class1_outline.pdf">PDF</a>)</h3>
+<p>Class 1 Handout (<a href="class1.pdf">PDF</a>)</p>
+<ul>
+<li id="sec-1">Introductions, orientation (20 min.)
+<ul>
+<li id="sec-1-1">backgrounds &amp; interests
+</li>
+<li id="sec-1-2">brainstorm about sensor types, applications
+<ul>
+<li id="sec-1-2-1">virtual reality: hand position, body position
+</li>
+<li id="sec-1-2-2">art examples: <a href="http://whoisbrigidrose.com/">Brigid Walsh's wearable proximity alert dress</a>, <a href="http://autonets.org/">Micha Cardenas' performance art/bracelets/hoodie</a>
+</li>
+</ul>
+</li>
+<li id="sec-1-3">overview of Class 1, Class 2 topics
+</li>
+<li id="sec-1-4">orientation to handout
+</li>
+</ul>
+</li>
+<li id="sec-2">Switches &amp; resistors (20 min.)
+<ul>
+<li id="sec-2-1">Activity: basic lightbulb circuit example
+</li>
+<li id="sec-2-2">Activity: add a switch
+</li>
+<li id="sec-2-3">Concept: introduce circuit notation, key symbols
+</li>
+<li id="sec-2-4">Concept: how does current flow in a network? what is voltage?
+</li>
+<li id="sec-2-5">Activity: add different-valued resistors, potentiometers
+</li>
+<li id="sec-2-6">Concept: V=IR, P=IV, series &amp; parallel circuits
+</li>
+</ul>
+</li>
+<li id="sec-3">Sensors are mostly switches or resistors (20 min.)
+<ul>
+<li id="sec-3-1">switches: photodiode, knifethrow, push button, tilt switch, beam-break, reed switch
+</li>
+<li id="sec-3-2">resistors: thermistor, photoresistor, potentiometer, load cell
+</li>
+<li id="sec-3-3">(but some aren't): windspeed, rainfall, relative humidity, oxygen ppm
+</li>
+<li id="sec-3-4">Activity: pick a reed switch or push button to put in your circuit
+</li>
+<li id="sec-3-5">brief show &amp; tell/knowledgeshare
+<ul>
+<li id="sec-3-5-1">Note: Some students built circuits which light up when the switch closes, and some turn off.
+</li></ul>
+</li>
+</ul>
+</li>
+<li id="sec-4">Hands-on with more circuits (50 min.)
+<ul>
+<li id="sec-4-1">Activity: practice building sensors in Fig. 2, 3a
+</li>
+<li id="sec-4-2">Concept: transistor pinout &amp; schematic
+</li>
+<li id="sec-4-3">Concept: matching resistor values to sensors
+</li>
+</ul>
+</li>
+<li id="sec-5">Wrap-up (10 min.), 
+<ul>
+<li id="sec-5-1">Clean up, have students put their names on breadboards for next class</li>
+<li id="sec-5-2">What did we learn?</li>
+<li id="sec-5-3">What didn't work?</li>
+</ul>
+</li>
+<li id="sec-6">Extra Topics (as time allows)
+<ul>
+<li id="sec-6-1">revisit sensor types with an individual project focus
+</li>
+<li id="sec-6-2">LEDs &amp; directional components
+</li>
+<li id="sec-6-3">practice circuit diagrams, math
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Class 2 Outline (<a href="class2_outline.pdf">PDF</a>)</h3>
+<p>Class 2 Handout (<a href="class2.pdf">PDF</a>)</p>
+<ul>
+<li id="sec-1">Introduction (15 min.)
+<ul>
+<li id="sec-1-1">orientation to handout
+</li>
+<li id="sec-1-2">brief review of Class 1
+</li>
+</ul>
+</li>
+<li id="sec-2">BJT Power Amp (30 min.)
+<ul>
+<li id="sec-2-1">rules transistors follow in circuits
+<ol>
+<li>V<sub>E</sub> = V<sub>B</sub> - 0.6V
+</li>
+<li>I<sub>CE</sub> = h * I<sub>BE</sub> (h ~ 100)
+</li>
+</ol>
+</li>
+<li id="sec-2-2">Review: voltage follower circuit
+</li>
+<li id="sec-2-3">Activity: current source circuit
+</li>
+</ul>
+</li>
+<li id="sec-3">Input Conditioning (10 min.)
+<ul>
+<li id="sec-3-1">read the documentation for I-V curves
+</li>
+<li id="sec-3-2">Concept: think about the range of inputs you're going to get (e.g. temperature), and outputs you want (what are you driving?)
+</li>
+</ul>
+</li>
+<li id="sec-4">Op-Amps (55 min.)
+<ul>
+<li id="sec-4-1">how to insert DIP components into breadboards
+</li>
+<li id="sec-4-2">Concept: open-loop vs. closed-loop configuration
+<ul>
+<li id="sec-4-2-1">Op-amp multiplies the difference between its inputs.  But we never use them open-loop.</li></ul>
+</li>
+<li id="sec-4-3">Activity: tuning gain with resistors
+</li>
+<li id="sec-4-4">Activity: comparator to subtract constant voltage
+</li>
+<li id="sec-4-5">Concept: why build these complex circuits?
+</li>
+</ul>
+</li>
+<li id="sec-5">Wrap-up (10 min.)</li>
+</ul>
+
+<p>In addition to the handouts, datasheets for each major component were made available for students to consult during class.</p>
+
+<h3>Items Needed</h3>
+<ul>
+<li><a href="http://www.digikey.com/product-detail/en/BH48AASF/BH48AASF-ND/1951883">8 AA-cell battery pack</a></li>
+<li>AA batteries</li>
+<li><a href="http://www.digikey.com/product-detail/en/7219/CM7219-ND/242927">incandescent bulb 12V</a> (<a href="http://www.chml.com/products/pdf/2-33.pdf">datasheet</a>)</li>
+<li><a href="http://www.digikey.com/product-detail/en/103A-C-BK/CP-2406-ND/98059">black alligator clips</a></li>
+<li><a href="http://www.digikey.com/product-detail/en/103A-C-RD/CP-2407-ND/98062">red alligator clips</a></li>
+<li><a href="http://www.digikey.com/product-detail/en/WP710A10LID/754-1610-ND/2657763">red LED</a> (<a href="http://www.kingbrightusa.com/images/catalog/SPEC/WP710A10LID.pdf">datasheet</a>)</li>
+<li>tilt switches</li>
+<li>push button switches</li>
+<li>linear slider switches</li>
+<li><a href="http://www.digikey.com/product-detail/en/FLEX-14%2015-20/HE556-ND/2218214">reed switch, 15-20AT</a> (<a href="http://www.hamlin.com/specsheets/FLEX-14.pdf">datasheet</a>)</li>
+<li><a href="http://www.digikey.com/product-detail/en/PDV-P8104/PDV-P8104-ND/480611">photoresistor, 27-60kOhm</a> (<a href="http://www.advancedphotonix.com/ap_products/pdfs/PDV-P8104.pdf">datasheet</a>)</li>
+<li><a href="http://www.digikey.com/product-detail/en/NTCLE100E3123JB0/BC2401-ND/2230729">thermistor, 12kOhm</a> (<a href="http://www.vishay.com/doc?29049">datasheet</a>)</li>
+<li><a href="http://www.digikey.com/product-detail/en/30-73258/1027-1002-ND/2476470">force sensing resistor</a></li>
+<li><a href="http://www.digikey.com/product-detail/en/RNF14FTD49K9/RNF14FTD49K9TR-ND/1682303">50 kOhm resistor</a> for use with photoresistor</li>
+<li><a href="http://www.digikey.com/product-detail/en/RNMF14FTC12K0/S12KCACT-ND/2617442">12 kOhm resistor</a> for use with thermistor</li>
+<li><a href="http://www.digikey.com/product-detail/en/CFM12JT220R/S220HCT-ND/2617576">220 Ohm resistor</a> for use with LED</li>
+<li><a href="http://www.digikey.com/product-detail/en/LM358P/296-1395-5-ND/277042">LM-358 dual op-amp</a> (<a href="http://www.ti.com/lit/ds/symlink/lm358.pdf">datasheet</a>)</li>
+<li><a href="http://www.digikey.com/product-detail/en/STPSA42/1026-STPSA42-CHP/2521339">low-power transistor</a> for LED / current source (<a href="http://www.st.com/internet/com/TECHNICAL_RESOURCES/TECHNICAL_LITERATURE/DATASHEET/CD00002978.pdf">datasheet</a>)</li>
+<li><a href="http://www.digikey.com/product-detail/en/2SD2528/2SD2528-ND/279336">high-power transistor</a> for incandescent bulb (<a href="http://www.semicon.panasonic.co.jp/ds4/2SD2528_BED_discon.pdf">datasheet</a>)</li>
+<li>magnets (ideally of various strengths)</li>
+<li>multimeter</li>
+<li>pen caps, or other opaque "lids" to shield the photoresistor</li>
+<li>ice or other cold source</li>
+<li>butane lighter or other heat source</li>
+</ul>
+
+<h3>Pedagogical Notes</h3>
+
+<p>Example circuits and transistor & op-amp concepts were developed with reference to the following text, particularly Chapters 2 and 4.
+<blockquote>Horowitz, Paul, and Winfield Hill. <em>The Art of Electronics.</em> 2nd ed. Cambridge University Press, 1989. ISBN: 978-0521370950.</blockquote></p>
+
+<h3>Source Files (<a href="sensors-class-materials.zip">ZIP</a>)</h3>
+
+<!--
+<h3>Reflections</h3>
+
+<p>Class 1</p>
+<ol>
+<li>If possible, the introductory remarks should include pictures or videos of the example projects, for best inspiration.</li>
+<li>We asked students about their background: everyone had built a circuit, nearly everyone had done some programming, but few had microcontroller experience (combining programming with electronics). We meant to ask who knew how to use a breadboard, but forgot.</li>
+<li>Accordingly, we breezed through the first page of the handout. We had them build circuit 1a just to get their hands on the batteries and lamps, and break up the lecturing.  It turned out that almost no one had used a breadboard.  We should have talked more about how breadboards worked before going on to add-a-switch.</li>
+<li>It might also work well to provide a picture of 2a or 2b laid out on a breadboard, and encourage students to lay out their components the same way.</li>
+<li>Contrary to our careful warning about picking a sensor that responds to the correct range, it was very challenging to produce a detectable signal from the thermistors. Our students were willing to try applying ice and flame, but it didn't always work and was ultimately somewhat frustrating.</li>
+</ol>
+
+<p>Class 2</p>
+<ol>
+<li>In the documents above, all the circuit diagrams were provided to the students in class 1, and students worked through them at their own pace during the hands-on sections. **</li>
+<li>Students wanted more help breadboarding the most complex circuits, especially the comparator in Fig. 3d. We provided a pre-built example, but a live demo or a series of photos breaking the process into steps might help more.</li>
+</ol>
+
+<p>General Course Design</p>
+<ol>
+<li>Example circuits and transistor & op-amp concepts were developed with reference to the following text, particularly Chapters 2 and 4.
+<blockquote>Horowitz, Paul, and Winfield Hill. <em>The Art of Electronics.</em> 2nd ed. Cambridge University Press, 1989. ISBN: 978-0521370950.</blockquote></li>
+<li>Before teaching the class, our learning objectives contained more emphasis on design concepts and mathematical analysis of sensor circuits. In class, these topics were skipped or not sufficiently emphasized due to time constraints.</li>
+<li>Perhaps we should've designed the class around a weather-station project, or an accelerometer or GPS app. We wanted to avoid the complications of teaching digital circuits and/or the Arduino environment, so we chose this very low-level, analog set of examples. An audience already familiar with those concepts, however, might appreciate a more packaged take-home.</li>
+<li>We anticipate re-teaching this seminar after establishing a Introductory Circuits class, where students can learn the basic voltage, current, component identification, and breadboarding skills used in this course. While we were (and remain) willing to include those topics in this course, students who encounter them for the first time are not well-positioned to absorb the sensors content as well, and may become frustrated.</li>
+<li>While we allowed younger students to attend, it is not aimed at that audience. Revisions I would consider for a school-age audience: replace some circuit-building time with instructor demonstrations; definitely pick a simple example project they can take home (slider or tilt switch + lights? something wearable?); ***</li>
+<li>We salvaged several different types of switches from the stockroom, and ***</li>
+</ol>-->
+</body>
+</html>
+

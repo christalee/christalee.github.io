@@ -2,6 +2,7 @@ title: MIT OCW Highlights
 date: September 2011
 tags: portfolio, publishing
 img: ocw_highlights.png
+caption: Intro to Solid-State Chemistry, one of my favorite courses to work on
 
 You never forget your first, and for me, it's true for my first job: working with faculty to publish open educational content at [MIT OpenCourseWare](https://ocw.mit.edu/). A massive undertaking, OCW's original remit was to publish the entirety of MIT's curriculum online under an open license, for reuse and remixing. I was lucky enough to be present when they hit the milestone of 2000 courses published, and they've come quite a ways since then.
 

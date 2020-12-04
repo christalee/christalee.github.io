@@ -64,7 +64,10 @@ title %}
     </footer><!-- /.post-info -->
     <div class="entry-content">
       {% if article.img %}
-      <img class="figure-img" src="{{ SITEURL }}/images/{{ article.img }}" />
+      <figure class="figure-img">
+        <img src="{{ SITEURL }}/images/{{ article.img }}" />
+        <figcaption class="small">{{ article.caption }}</figcaption>
+      </figure>
       {% endif %}
       {{ article.content }}
     </div><!-- /.entry-content -->

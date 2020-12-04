@@ -15,7 +15,7 @@
             <img src="{{ SITEURL }}/images/default.png" alt="" />
             {% endif %}
             <h1>{{article.title}}</h1>
-            <p>{{article.tags|join(", ")}}</p>
+            <p>{{article.tags| reject("==", "portfolio") | join(", ")}}</p>
           </a>
         </div>
       </li>
