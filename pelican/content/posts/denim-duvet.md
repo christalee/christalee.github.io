@@ -8,6 +8,7 @@ Over the years, I've gone through a lot of jeans. Usually I retire them for exce
 
 Next steps on this project are to learn to use our buttonholing foot, make buttonholes in the denim, attach the bottom layer, and add buttons to finish it off. We look forward to having a second duvet cover to alternate with our current one, which is mostly white and shows cat hair entirely too well.
 
+<br />
 <figure class="figure-img">
 <img src="/images/denim-duvet-2.jpg" />
 <figcaption class="small">The beginnings of the spiral</figcaption>
