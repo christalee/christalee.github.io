@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="Christalee Bieber" />
-    <title>Christalee Bieber - Teal Labs, Inc. - Tags</title>
+    <title>Christalee Bieber - Teal Labs, Inc. - Three Things Learned</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous"></script>
@@ -47,23 +47,45 @@
     </nav>
     <!-- Page Content-->
     <div class="container-fluid p-0">
-    <h1>Tags for Christalee Bieber - Teal Labs, Inc.</h1>
-    <ul>
-        <li><a href="/tag/computer-science.html">computer science</a> (2)</li>
-        <li><a href="/tag/design.html">design</a> (1)</li>
-        <li><a href="/tag/education.html">education</a> (5)</li>
-        <li><a href="/tag/hobbies.html">hobbies</a> (6)</li>
-        <li><a href="/tag/interviewing.html">interviewing</a> (1)</li>
-        <li><a href="/tag/jokes.html">jokes</a> (1)</li>
-        <li><a href="/tag/making.html">making</a> (6)</li>
-        <li><a href="/tag/materials-science.html">materials science</a> (1)</li>
-        <li><a href="/tag/personal.html">personal</a> (2)</li>
-        <li><a href="/tag/portfolio.html">portfolio</a> (9)</li>
-        <li><a href="/tag/programming.html">programming</a> (14)</li>
-        <li><a href="/tag/prototyping.html">prototyping</a> (1)</li>
-        <li><a href="/tag/publishing.html">publishing</a> (3)</li>
-        <li><a href="/tag/rc.html">RC</a> (6)</li>
-    </ul>
+<section id="content" class="resume-section">
+  <div class="resume-section-content">
+    <header>
+      <h2 class="entry-title">
+        <a href="/posts/three-things-learned.html" rel="bookmark" title="Permalink to Three Things Learned">Three Things Learned</a></h2>
+      
+    </header>
+    <footer class="post-info">
+      <time class="published" datetime="2021-02-04T00:00:00-05:00">
+        04 February 2021
+      </time>
+      <address class="vcard author">
+        By         <a class="url fn" href="/author/christalee-bieber.html">Christalee Bieber</a>
+      </address>
+      <!--       <div class="category">
+        Category: <a href="/category/posts.html">posts</a>
+      </div>
+ -->
+      <div class="tags">
+        Tags:
+        <a href="/tag/rc.html">RC</a>,        <a href="/tag/programming.html">programming</a>      </div>
+    </footer><!-- /.post-info -->
+    <div class="entry-content">
+      <p>I haven't been keeping up with this blog, but I have been keeping busy. A few things I've learned recently:</p>
+<ul>
+<li>
+<p>Although JavaScript has a <code>typeof</code> command, it doesn't produce very useful output. In particular, it yields <code>object</code> no matter whether the structure in question is a Map, an Array, a Set, or an Object. Apparently, <code>x.constructor</code> is how to find out what type something actually is.</p>
+</li>
+<li>
+<p>On bash, <code>which</code> is a program, not a builtin. So it's not aware of aliases, like <code>python='python3'</code>. Neither is <code>sudo</code>. So you can check <code>python --version &gt;= 3</code> but that's no guarantee that <code>sudo pip install</code> or <code>sudo python -m pip install</code> will be python3. It makes me rethink the utility of aliases, and possibly virtualenvs.</p>
+</li>
+<li>
+<p>Python lists are not implemented with pointers like Lisp lists! Per <a href="https://norvig.com/python-lisp.html">Peter Norvig</a>, Python list access is O(1); per the <a href="https://docs.python.org/3/faq/design.html#how-are-lists-implemented-in-cpython">Python Design and History FAQ</a>, they are contiguous memory chunks with a head pointer and length value stored up front.</p>
+</li>
+</ul>
+<p>Three things make a post, plus it's dinnertime: fried tofu w/ bbq sauce, risotto, and Sichuan dry-fried mushrooms &amp; peppers.</p>
+    </div><!-- /.entry-content -->
+  </div>
+</section>
     </div>
 
     <!-- Bootstrap core JS-->
