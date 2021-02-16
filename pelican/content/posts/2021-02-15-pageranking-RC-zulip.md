@@ -10,18 +10,17 @@ Over the past couple of weeks, I and some colleagues in the *[Mastering Large Da
 
 I gave a [short presentation](https://docs.google.com/presentation/d/1E4sh81x317Qfqi5LneRF4iFPndK_cO01H8_fatm3DvQ/edit?usp=sharing) on Friday about the work done so far. Today I worked a bit on one of the next steps: a function to automatically stop the algorithm once it's run "long enough". Originally I was running it for 10 cycles, which I suspected was overkill. I started by generating a list of lists, containing the top 10 users and their ratings, for each cycle. After some massaging, I generated this graph, which shows the scores per user over time. Visual inspection suggests the ratings settle down after 4 cycles, but I'd like to calculate that directly, if possible.
 
-I ended up writing a helper function that, given two sets of top 10 users and their ratings, first compared the users to ensure both set were the same. If not, it returned one set of names. If so, it calculated the element-wise difference of the ratings and returned them.
+I ended up writing a helper function that, given two sets of top 10 users and their ratings, first compares the users to ensure both sets are the same. If not, it returns one set of names. If so, it calculates the element-wise difference of the ratings and returns them.
 
-```
-def compare10(a, b):
-    names_a = [x[0] for x in a]
-    names_b = [x[0] for x in b]
-    if not names_a == names_b:
-        return names_a
-    else:
-        diffs = [(x[1] - y[1])*2/(x[1] + y[1]) for x, y in zip(a, b)]
-        return [round(x, 2) for x in diffs]
-```
+    :::python
+    def compare10(a, b):
+        names_a = [x[0] for x in a]
+        names_b = [x[0] for x in b]
+        if not names_a == names_b:
+            return names_a
+        else:
+            diffs = [(x[1] - y[1])*2/(x[1] + y[1]) for x, y in zip(a, b)]
+            return [round(x, 2) for x in diffs]
 
 I called this function after a couple of rounds, to compare the current round with the previous two rounds. If the differences between subsequent rounds aren't changing, I'm comfortable declaring the loop finished. Depending on how many places I `round` to, this turns out to be 7, 10, or 23 cycles! I guess appearances are deceiving. (Machine learning hyperparameter tuning relies heavily on picking values off graphs, which I'm suddenly much more skeptical of...)
 
