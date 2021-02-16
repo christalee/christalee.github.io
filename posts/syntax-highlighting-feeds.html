@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="Christalee Bieber" />
-    <title>Christalee Bieber - Teal Labs, Inc. - prototyping tag</title>
+    <title>Christalee Bieber - Teal Labs, Inc. - syntax highlighting & feeds</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
@@ -56,28 +56,40 @@
     </nav>
     <!-- Page Content-->
     <div class="container-fluid p-0">
-<section class="resume-section" id="content">
+<section id="content" class="resume-section">
   <div class="resume-section-content">
-<h2>Articles tagged with prototyping</h2>
-
-    <ol id="post-list">
-      <li>
-        <article class="hentry">
-          <header>
-            <h4 class="entry-title"><a href="/posts/teaching-materials-selection-in-high-school.html" rel="bookmark" title="Permalink to Teaching Materials Selection in High School">Teaching Materials Selection in High School</a></h4>
-          </header>
-          <footer class="post-info">
-            <time class="published" datetime="2017-06-13T00:00:00-04:00"> 13 June 2017 </time>
-            <div class="tags"> Tags:
-              <a href="/tag/materials-science.html">materials science</a>,              <a href="/tag/education.html">education</a>,              <a href="/tag/design.html">design</a>,              <a href="/tag/prototyping.html">prototyping</a>            </div>
-          </footer><!-- /.post-info -->
-          <div class="entry-content"> <p>Materials selection and Ashby charts are rarely covered in depth for most STEM students or teachers, so I wanted to give them strong guidance. Here's my advice.</p> </div><!-- /.entry-content -->
-        </article>
-      </li>
-    </ol><!-- /#posts-list -->
-
+    <header>
+      <h2 class="entry-title">
+        <a href="/posts/syntax-highlighting-feeds.html" rel="bookmark" title="Permalink to syntax highlighting & feeds">syntax highlighting & feeds</a></h2>
+      
+    </header>
+    <footer class="post-info">
+      <time class="published" datetime="2021-02-16T00:00:00-05:00">
+        16 February 2021
+      </time>
+      <address class="vcard author">
+        By         <a class="url fn" href="/author/christalee-bieber.html">Christalee Bieber</a>
+      </address>
+      <!--       <div class="category">
+        Category: <a href="/category/posts.html">posts</a>
+      </div>
+ -->
+      <div class="tags">
+        Tags:
+        <a href="/tag/programming.html">programming</a>      </div>
+    </footer><!-- /.post-info -->
+    <div class="entry-content">
+      <p>I haven't written much about the process of putting this blog together because I want it to speak for itself, but I wanted to write a short note about two features I added today. One was syntax highlighting, using pygment's 'friendly' theme. (Thanks to <a href="https://help.farbox.com/pygments.html">this gallery</a> for showing off the default themes!) It was not as straightforward as the docs suggested, in that I needed to generate or acquire a CSS file for my preferred theme. The results are visible in my previous post on PageRank. The first snippet specifies that python highlighting is needed, but the second snippet uses generic <code>```code```</code> syntax and seems to work just fine. (Python may be the default, come to think of it.)</p>
+<p>The other update is that if you would like to subscribe to my blog, feeds are now available! There is an <a href="https://christalee.teallabs.org/feeds/rss.xml">RSS feed</a>, an <a href="https://christalee.teallabs.org/feeds/atom.xml">Atom feed</a>, plus <code>all.rss.xml</code> and <code>all.atom.xml</code> which are probably identical.</p>
+<p>Bonus feature: previous and next links at the bottom of each post, as there are now enough that someone might want to browse through them!</p>
+    </div><!-- /.entry-content -->
   </div>
-</section><!-- /#content -->
+</section>
+<div class="prev post-info">
+  <a href="/posts/pageranking-rc-zulip.html">
+    << PageRanking RC Zulip </a>  </div> <div class="next post-info">
+</div>
+
     </div>
 
     <!-- Bootstrap core JS-->

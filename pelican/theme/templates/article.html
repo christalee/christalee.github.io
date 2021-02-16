@@ -73,4 +73,14 @@ title %}
     </div><!-- /.entry-content -->
   </div>
 </section>
+<div class="prev post-info">
+  {% if article.prev_article %}
+  <a href="{{ SITEURL }}/{{ article.prev_article.url}}">
+    << {{ article.prev_article.title }} </a> {% endif %} </div> <div class="next post-info">
+      {% if article.next_article %}
+      <a href="{{ SITEURL }}/{{ article.next_article.url}}">{{ article.next_article.title }}
+        >></a>
+      {% endif %}
+</div>
+
 {% endblock %}
