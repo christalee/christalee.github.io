@@ -1,5 +1,5 @@
 title: PageRanking RC Zulip
-tags: RC, programming
+tags: RC, programming, python
 
 Over the past couple of weeks, I and some colleagues in the *[Mastering Large Datasets with Python](https://www.manning.com/books/mastering-large-datasets-with-python#toc)* group have been practicing our new ability to scrape and process large amount of data with Spark, by harvesting public messages from the RC Zulip and analyzing them. (For those unfamiliar with [Zulip](https://zulip.com/), it's similar to Slack, with channels and mentions.) Although it doesn't quite qualify as "Big Data", the dataset contains ~800,000 messages, which is fodder for all sorts of questions about who posts, when, on what topics, etc. I've been focusing on implementing PageRank based on @mentions, following the book's example, and found it pretty straightforward once I performed some basic text cleanup.
 

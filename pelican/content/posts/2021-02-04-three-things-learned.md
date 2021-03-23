@@ -1,5 +1,5 @@
 title: Three Things Learned
-tags: RC, programming
+tags: RC, programming, javascript, python
 
 I haven't been keeping up with this blog, but I have been keeping busy. A few things I've learned recently:
 

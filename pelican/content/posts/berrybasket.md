@@ -1,6 +1,6 @@
 title: Berrybasket
 date: June 2013
-tags: portfolio, making, programming
+tags: portfolio, making, programming, python
 img: berrybasket.jpg
 caption: Prototyping our sensor array with the Perma-Proto and some CAT-5
 

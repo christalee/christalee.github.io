@@ -1,5 +1,5 @@
 title: Advent of Code 2020, in JavaScript
-tags: programming
+tags: programming, javascript
 
 I’m doing Advent of Code this year using JavaScript, with the goal of forcing myself to learn the ins and outs of the language. And boy, does it have a lot of those. Here are some reflections on traps and quirks I’ve discovered.
 
