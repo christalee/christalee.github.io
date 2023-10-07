@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="Christalee Bieber" />
+    <title>Christalee Bieber - Teal Labs, Inc. - Cost of Drinking</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
+      crossorigin="anonymous"></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/theme/css/hexagons.css" rel="stylesheet" />
+    <link href="/theme/css/friendly.css" rel="stylesheet" />
+    <link href="/theme/css/styles.css" rel="stylesheet" />
+
+
+
+
+<meta name="tags" content="portfolio" />
+<meta name="tags" content="programming" />
+<meta name="tags" content="hobbies" />
+<meta name="tags" content="python" />
+<meta name="tags" content="javascript" />
+<meta name="tags" content="RC" />
+
+  </head>
+
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger hex-link" href="#page-top">
+        <span class="d-block d-lg-none">Christalee Bieber - Teal Labs, Inc.</span>
+        <span class="d-none d-lg-block">
+          <div class="hex-profile">
+            <img class="img-fluid mx-auto" src="/images/profile.jpg"
+              alt="" />
+          </div>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/pages/resume.html">Resume</a></li>
+          <li class="nav-item">
+            <div class="social-icons">
+              <a class="social-icon" href="https://github.com/christalee"><i
+                  class="fab fa-github"></i></a>
+              <a class="social-icon" href="https://www.linkedin.com/in/christalee-bieber/"><i
+                  class="fab fa-linkedin-in"></i></a>
+              <a class="social-icon" href="mailto:christalee@teallabs.org"><i
+                  class="fas fa-at"></i></a>
+              <a class="social-icon" href="https://christalee.teallabs.org/feeds/rss.xml"><i
+                  class="fas fa-rss"></i></a>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+    <!-- Page Content-->
+    <div class="container-fluid p-0">
+<section id="content" class="resume-section">
+  <div class="resume-section-content">
+    <header>
+      <h2 class="entry-title">
+        <a href="/posts/cost-of-drinking.html" rel="bookmark" title="Permalink to Cost of Drinking">Cost of Drinking</a></h2>
+      
+    </header>
+    <footer class="post-info">
+      <time class="published" datetime="2021-02-07T00:00:00-05:00">
+        07 February 2021
+      </time>
+      <address class="vcard author">
+        By         <a class="url fn" href="/author/christalee-bieber.html">Christalee Bieber</a>
+      </address>
+      <!--       <div class="category">
+        Category: <a href="/category/posts.html">posts</a>
+      </div>
+ -->
+      <div class="tags">
+        Tags:
+        <a href="/tag/portfolio.html">portfolio</a>,        <a href="/tag/programming.html">programming</a>,        <a href="/tag/hobbies.html">hobbies</a>,        <a href="/tag/python.html">python</a>,        <a href="/tag/javascript.html">javascript</a>,        <a href="/tag/rc.html">RC</a>      </div>
+    </footer><!-- /.post-info -->
+    <div class="entry-content">
+      <figure class="figure-img">
+        <img src="/images/cola-map.png" />
+        <figcaption class="small"></figcaption>
+      </figure>
+      <p>When I started at the Recurse Center, I had several vague ideas of projects I wanted to work on. A throwaway comment on the price of beer in Budapest inspired me to see if beer could be used as a cost of living metric. The first maps I found polled a single city per country, typically the capital or largest city, which seemed unrepresentative: everyone knows the cost of living is high in New York, Tokyo, or London. So I wanted to gather data by city, average it across various sources, and map it. Since beer is not globally popular, though (in Saudi Arabia, it's illegal), I decided to expand my analysis to coffee, which is widely available even in non-coffee cultures, and bread, since everyone needs something to nibble on with their beer. (In my household, we make some of our beer and bake some of our bread; we do not roast our own coffee.)</p>
+<p>I collaborated with <a href="https://github.com/apettenati">apettenati</a> on the data scraping (<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a>) and cleaning (<a href="https://pandas.pydata.org/">pandas</a>) phase. We split up our data sources: DeutscheBank's <a href="https://www.dbresearch.com/PROD/RPS_EN-PROD/Mapping_the_world_prices_2019/RPS_EN_DOC_VIEW.calias?rwnode=PROD0000000000436748&amp;ProdCollection=PROD0000000000505140">survey of world prices</a>, <a href="https://www.expatistan.com/cost-of-living">Expatistan</a>, <a href="https://www.numbeo.com/cost-of-living/">Numbeo</a>, and <a href="http://www.pintprice.com/">PintPrice</a>. Initially I made a proof-of-concept map in <a href="https://python-visualization.github.io/folium/">folium</a>, but quickly realized I needed to switch to JavaScript, for a feature that restricted the number of markers based on the zoom level, to avoid overcrowding the map. So I tried <a href="https://leafletjs.com/">Leaflet.JS</a> and found it reasonably easy to work with. Folium had given me the idea for charts in popups, though, so I turned to <a href="https://www.chartjs.org/">Chart.JS</a> to create those. I'm still not entirely comfortable in JavaScript but this project was a major step forward in my understanding. The payoff of having a snazzy visualization was surprisingly motivational (in direct contrast to the data cleaning phase, which was tedious beyond belief but also essential.)</p>
+<p>Check out the code on <a href="https://github.com/christalee/cost-of-drinking">Github</a> and the map itself <a href="/pages/cost-of-drinking.html">here</a>.</p>
+    </div><!-- /.entry-content -->
+  </div>
+</section>
+<div class="prev post-info">
+ </div> <div class="next post-info">
+</div>
+
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/theme/js/scripts.js"></script>
+  </body>
+
+</html>

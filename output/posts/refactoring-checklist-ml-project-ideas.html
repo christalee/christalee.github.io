@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="Christalee Bieber" />
+    <title>Christalee Bieber - Teal Labs, Inc. - refactoring checklist; ML project ideas</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
+      crossorigin="anonymous"></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/theme/css/hexagons.css" rel="stylesheet" />
+    <link href="/theme/css/friendly.css" rel="stylesheet" />
+    <link href="/theme/css/styles.css" rel="stylesheet" />
+
+
+
+
+<meta name="tags" content="programming" />
+<meta name="tags" content="RC" />
+
+  </head>
+
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger hex-link" href="#page-top">
+        <span class="d-block d-lg-none">Christalee Bieber - Teal Labs, Inc.</span>
+        <span class="d-none d-lg-block">
+          <div class="hex-profile">
+            <img class="img-fluid mx-auto" src="/images/profile.jpg"
+              alt="" />
+          </div>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/pages/resume.html">Resume</a></li>
+          <li class="nav-item">
+            <div class="social-icons">
+              <a class="social-icon" href="https://github.com/christalee"><i
+                  class="fab fa-github"></i></a>
+              <a class="social-icon" href="https://www.linkedin.com/in/christalee-bieber/"><i
+                  class="fab fa-linkedin-in"></i></a>
+              <a class="social-icon" href="mailto:christalee@teallabs.org"><i
+                  class="fas fa-at"></i></a>
+              <a class="social-icon" href="https://christalee.teallabs.org/feeds/rss.xml"><i
+                  class="fas fa-rss"></i></a>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+    <!-- Page Content-->
+    <div class="container-fluid p-0">
+<section id="content" class="resume-section">
+  <div class="resume-section-content">
+    <header>
+      <h2 class="entry-title">
+        <a href="/posts/refactoring-checklist-ml-project-ideas.html" rel="bookmark" title="Permalink to refactoring checklist; ML project ideas">refactoring checklist; ML project ideas</a></h2>
+      
+    </header>
+    <footer class="post-info">
+      <time class="published" datetime="2021-01-19T00:00:00-05:00">
+        19 January 2021
+      </time>
+      <address class="vcard author">
+        By         <a class="url fn" href="/author/christalee-bieber.html">Christalee Bieber</a>
+      </address>
+      <!--       <div class="category">
+        Category: <a href="/category/posts.html">posts</a>
+      </div>
+ -->
+      <div class="tags">
+        Tags:
+        <a href="/tag/programming.html">programming</a>,        <a href="/tag/rc.html">RC</a>      </div>
+    </footer><!-- /.post-info -->
+    <div class="entry-content">
+      <p>In a recent conversation I mentioned that when I meet a new Python feature, I add it to my refactoring checklist. Someone asked me to share that checklist, and here it is, slightly expanded:</p>
+<ul>
+<li>write all comments/docstrings</li>
+<li>resolve all TODOs</li>
+<li>add types to all fn declarations and key local vars</li>
+<li>expand short names to something explanatory</li>
+<li>for loops -&gt; list comprehensions</li>
+<li>use dict comprehensions</li>
+<li>use generator or lazy iterator?</li>
+<li>use collections.Counter to count things</li>
+<li>use map, filter, reduce?</li>
+</ul>
+<p>Obviously this doesn't address the "main" work of refactoring, like moving chunks of code around. But it's a list of stuff to look out for before pushing for public consumption, to encourage my code to be elegant, concise, and useable.</p>
+<hr />
+
+<p>In other news, I'm looking for excuses to use the Heap computing cluster, which means a machine learning problem with significant HD or processor requirements. So far I'm considering:</p>
+<ul>
+<li>restarting my Bengali.AI OCR project</li>
+<li>doing something involving text prediction/generation, like Byronic poetry or Shakespearean sonnets or murder ballads<ul>
+<li>definitely want a PD corpus</li>
+<li>pairing with a colleague taught me about beam search, which generates several high-scoring text strings rather than simply the best token-by-token one</li>
+<li>inspiration: <a href="https://www.tensorflow.org/tutorials/text/text_generation">text generation with an RNN</a>, Coursera NLP with Tensorflow Week 4</li>
+</ul>
+</li>
+<li>helping experiment with a colleague's image captioning AI</li>
+<li>some Kaggle competition TBD?</li>
+</ul>
+    </div><!-- /.entry-content -->
+  </div>
+</section>
+<div class="prev post-info">
+ </div> <div class="next post-info">
+</div>
+
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/theme/js/scripts.js"></script>
+  </body>
+
+</html>

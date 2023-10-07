@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="Christalee Bieber" />
+    <title>Christalee Bieber - Teal Labs, Inc. - PageRanking RC Zulip</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
+      crossorigin="anonymous"></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/theme/css/hexagons.css" rel="stylesheet" />
+    <link href="/theme/css/friendly.css" rel="stylesheet" />
+    <link href="/theme/css/styles.css" rel="stylesheet" />
+
+
+
+
+<meta name="tags" content="RC" />
+<meta name="tags" content="programming" />
+<meta name="tags" content="python" />
+
+  </head>
+
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger hex-link" href="#page-top">
+        <span class="d-block d-lg-none">Christalee Bieber - Teal Labs, Inc.</span>
+        <span class="d-none d-lg-block">
+          <div class="hex-profile">
+            <img class="img-fluid mx-auto" src="/images/profile.jpg"
+              alt="" />
+          </div>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/pages/resume.html">Resume</a></li>
+          <li class="nav-item">
+            <div class="social-icons">
+              <a class="social-icon" href="https://github.com/christalee"><i
+                  class="fab fa-github"></i></a>
+              <a class="social-icon" href="https://www.linkedin.com/in/christalee-bieber/"><i
+                  class="fab fa-linkedin-in"></i></a>
+              <a class="social-icon" href="mailto:christalee@teallabs.org"><i
+                  class="fas fa-at"></i></a>
+              <a class="social-icon" href="https://christalee.teallabs.org/feeds/rss.xml"><i
+                  class="fas fa-rss"></i></a>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+    <!-- Page Content-->
+    <div class="container-fluid p-0">
+<section id="content" class="resume-section">
+  <div class="resume-section-content">
+    <header>
+      <h2 class="entry-title">
+        <a href="/posts/pageranking-rc-zulip.html" rel="bookmark" title="Permalink to PageRanking RC Zulip">PageRanking RC Zulip</a></h2>
+      
+    </header>
+    <footer class="post-info">
+      <time class="published" datetime="2021-02-15T00:00:00-05:00">
+        15 February 2021
+      </time>
+      <address class="vcard author">
+        By         <a class="url fn" href="/author/christalee-bieber.html">Christalee Bieber</a>
+      </address>
+      <!--       <div class="category">
+        Category: <a href="/category/posts.html">posts</a>
+      </div>
+ -->
+      <div class="tags">
+        Tags:
+        <a href="/tag/rc.html">RC</a>,        <a href="/tag/programming.html">programming</a>,        <a href="/tag/python.html">python</a>      </div>
+    </footer><!-- /.post-info -->
+    <div class="entry-content">
+      <p>Over the past couple of weeks, I and some colleagues in the <em><a href="https://www.manning.com/books/mastering-large-datasets-with-python#toc">Mastering Large Datasets with Python</a></em> group have been practicing our new ability to scrape and process large amount of data with Spark, by harvesting public messages from the RC Zulip and analyzing them. (For those unfamiliar with <a href="https://zulip.com/">Zulip</a>, it's similar to Slack, with channels and mentions.) Although it doesn't quite qualify as "Big Data", the dataset contains ~800,000 messages, which is fodder for all sorts of questions about who posts, when, on what topics, etc. I've been focusing on implementing PageRank based on @mentions, following the book's example, and found it pretty straightforward once I performed some basic text cleanup.</p>
+<figure class="figure-img">
+<img src="/images/pr_top10_graph.png" />
+<figcaption class="small">User ratings over 10 cycles of PageRanking</figcaption>
+</figure>
+
+<p>I gave a <a href="https://docs.google.com/presentation/d/1E4sh81x317Qfqi5LneRF4iFPndK_cO01H8_fatm3DvQ/edit?usp=sharing">short presentation</a> on Friday about the work done so far. Today I worked a bit on one of the next steps: a function to automatically stop the algorithm once it's run "long enough". Originally I was running it for 10 cycles, which I suspected was overkill. I started by generating a list of lists, containing the top 10 users and their ratings, for each cycle. After some massaging, I generated this graph, which shows the scores per user over time. Visual inspection suggests the ratings settle down after 4 cycles, but I'd like to calculate that directly, if possible.</p>
+<p>I ended up writing a helper function that, given two sets of top 10 users and their ratings, first compares the users to ensure both sets are the same. If not, it returns one set of names. If so, it calculates the element-wise difference of the ratings and returns them.</p>
+<div class="highlight"><pre><span></span><code><span class="k">def</span> <span class="nf">compare10</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">):</span>
+    <span class="n">names_a</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">a</span><span class="p">]</span>
+    <span class="n">names_b</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">b</span><span class="p">]</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">names_a</span> <span class="o">==</span> <span class="n">names_b</span><span class="p">:</span>
+        <span class="k">return</span> <span class="n">names_a</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">diffs</span> <span class="o">=</span> <span class="p">[(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span><span class="o">*</span><span class="mi">2</span><span class="o">/</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">y</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span> <span class="k">for</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">)]</span>
+        <span class="k">return</span> <span class="p">[</span><span class="nb">round</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">diffs</span><span class="p">]</span>
+</code></pre></div>
+
+<p>I called this function after a couple of rounds, to compare the current round with the previous two rounds. If the differences between subsequent rounds aren't changing, I'm comfortable declaring the loop finished. Depending on how many places I <code>round</code> to, this turns out to be 7, 10, or 23 cycles! I guess appearances are deceiving. (Machine learning hyperparameter tuning relies heavily on picking values off graphs, which I'm suddenly much more skeptical of...)</p>
+<div class="highlight"><pre><span></span><code><span class="n">trace</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[]</span>
+<span class="n">finished</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">False</span>
+<span class="n">i</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mh">0</span>
+<span class="k">while</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="nl">finished:</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mh">0</span><span class="o">:</span>
+<span class="w">        </span><span class="n">xs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sc</span><span class="p">.</span><span class="n">parallelize</span><span class="p">(</span><span class="n">zs</span><span class="p">.</span><span class="n">items</span><span class="p">())</span>
+<span class="w">    </span><span class="n">acc0</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">dict</span><span class="p">(</span><span class="n">xs</span><span class="p">.</span><span class="n">mapValues</span><span class="p">(</span><span class="n">pr_empty</span><span class="p">).</span><span class="n">collect</span><span class="p">())</span>
+<span class="w">    </span><span class="n">zs</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">xs</span><span class="p">.</span><span class="n">aggregate</span><span class="p">(</span><span class="n">acc0</span><span class="p">,</span><span class="w"> </span><span class="n">pr_acc</span><span class="p">,</span><span class="w"> </span><span class="n">pr_comb</span><span class="p">)</span>
+
+<span class="w">    </span><span class="n">top10</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">sorted</span><span class="p">([(</span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="p">[&#39;</span><span class="n">rating</span><span class="p">&#39;])</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">k</span><span class="p">,</span><span class="w"> </span><span class="n">v</span><span class="w"> </span><span class="n">in</span><span class="w"> </span><span class="n">zs</span><span class="p">.</span><span class="n">items</span><span class="p">()],</span><span class="w"> </span><span class="n">key</span><span class="o">=</span><span class="n">lambda</span><span class="w"> </span><span class="nl">x:</span><span class="w"> </span><span class="n">x</span><span class="p">[</span><span class="mh">1</span><span class="p">],</span><span class="w"> </span><span class="n">reverse</span><span class="o">=</span><span class="n">True</span><span class="p">)[</span><span class="o">:</span><span class="mh">10</span><span class="p">]</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="n">i</span><span class="w"> </span><span class="o">&gt;</span><span class="w"> </span><span class="mh">1</span><span class="o">:</span>
+<span class="w">        </span><span class="k">if</span><span class="w"> </span><span class="n">compare10</span><span class="p">(</span><span class="n">top10</span><span class="p">,</span><span class="w"> </span><span class="n">trace</span><span class="p">[</span><span class="o">-</span><span class="mh">1</span><span class="p">])</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="n">compare10</span><span class="p">(</span><span class="n">trace</span><span class="p">[</span><span class="o">-</span><span class="mh">1</span><span class="p">],</span><span class="w"> </span><span class="n">trace</span><span class="p">[</span><span class="o">-</span><span class="mh">2</span><span class="p">])</span><span class="o">:</span>
+<span class="w">            </span><span class="n">finished</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">True</span>
+<span class="w">            </span><span class="n">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+<span class="w">    </span><span class="n">i</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mh">1</span>
+<span class="w">    </span><span class="n">trace</span><span class="p">.</span><span class="n">append</span><span class="p">(</span><span class="n">top10</span><span class="p">)</span>
+</code></pre></div>
+    </div><!-- /.entry-content -->
+  </div>
+</section>
+<div class="prev post-info">
+ </div> <div class="next post-info">
+</div>
+
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/theme/js/scripts.js"></script>
+  </body>
+
+</html>

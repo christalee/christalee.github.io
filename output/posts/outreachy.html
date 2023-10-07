@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="Christalee Bieber" />
+    <title>Christalee Bieber - Teal Labs, Inc. - Outreachy</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
+      crossorigin="anonymous"></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/theme/css/hexagons.css" rel="stylesheet" />
+    <link href="/theme/css/friendly.css" rel="stylesheet" />
+    <link href="/theme/css/styles.css" rel="stylesheet" />
+
+
+
+
+<meta name="tags" content="portfolio" />
+<meta name="tags" content="python" />
+<meta name="tags" content="programming" />
+
+  </head>
+
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger hex-link" href="#page-top">
+        <span class="d-block d-lg-none">Christalee Bieber - Teal Labs, Inc.</span>
+        <span class="d-none d-lg-block">
+          <div class="hex-profile">
+            <img class="img-fluid mx-auto" src="/images/profile.jpg"
+              alt="" />
+          </div>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/pages/resume.html">Resume</a></li>
+          <li class="nav-item">
+            <div class="social-icons">
+              <a class="social-icon" href="https://github.com/christalee"><i
+                  class="fab fa-github"></i></a>
+              <a class="social-icon" href="https://www.linkedin.com/in/christalee-bieber/"><i
+                  class="fab fa-linkedin-in"></i></a>
+              <a class="social-icon" href="mailto:christalee@teallabs.org"><i
+                  class="fas fa-at"></i></a>
+              <a class="social-icon" href="https://christalee.teallabs.org/feeds/rss.xml"><i
+                  class="fas fa-rss"></i></a>
+            </div>
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+    <!-- Page Content-->
+    <div class="container-fluid p-0">
+<section id="content" class="resume-section">
+  <div class="resume-section-content">
+    <header>
+      <h2 class="entry-title">
+        <a href="/posts/outreachy.html" rel="bookmark" title="Permalink to Outreachy">Outreachy</a></h2>
+      
+    </header>
+    <footer class="post-info">
+      <time class="published" datetime="2021-04-07T00:00:00-04:00">
+        07 April 2021
+      </time>
+      <address class="vcard author">
+        By         <a class="url fn" href="/author/christalee-bieber.html">Christalee Bieber</a>
+      </address>
+      <!--       <div class="category">
+        Category: <a href="/category/posts.html">posts</a>
+      </div>
+ -->
+      <div class="tags">
+        Tags:
+        <a href="/tag/portfolio.html">portfolio</a>,        <a href="/tag/python.html">python</a>,        <a href="/tag/programming.html">programming</a>      </div>
+    </footer><!-- /.post-info -->
+    <div class="entry-content">
+      <figure class="figure-img">
+        <img src="/images/sankey.png" />
+        <figcaption class="small">A Sankey diagram showing user clicks starting from the English Wikipedia page on Alan Turing.</figcaption>
+      </figure>
+      <p>Last month I applied to <a href="https://www.outreachy.org/">Outreachy</a>, a paid internship for non-students from underrepresented groups in technology. Instead of interviewing based on your resume, part of the application involves making a contribution to the open source project you're hoping to work for. Since the internship employers tend to be big names in open source (Apache, Red Hat, the Linux Foundation, Mozilla, Wikimedia) this can be a bit intimidating. The process is very well documented, however, and volunteer mentors are available to help you as you work.</p>
+<p>I chose to submit two contributions to the Wikimedia Foundation, for two different projects of theirs. I appreciated that they carefully scaffolded the contribution process, asking every applicant to complete the same task, instead of just setting us free in the bug tracker. For large projects with many current and aspiring contributors, it can be tough to find a bug that's appropriate for a new programmer and claim it before someone else does, much less complete the work in a reasonable amount of time while following local conventions for contributors. I looked for such a thing with other projects and ultimately didn't find anything within the application timeframe. Luckily the Wikimedia application tasks were well-specified, the mentors were quite responsive, and the tasks themselves were right up my alley: writing Python to analyze data and teach others.</p>
+<p>One contribution I made was part of a larger project to write tutorials and tools for users to explore Wikipedia datasets. The task required both writing Python to analyze and visualize the data, and strong technical writing to explain the problem and potential  solutions. We started with a <a href="https://public.paws.wmcloud.org/User:Isaac_(WMF)/Outreachy%20Summer%202021/Wikipedia_Edit_Tags.ipynb">partial outline</a> and filled in the gaps, resulting in <a href="https://public.paws.wmcloud.org/User:Christalee_b/[Outreachy]%20Wikipedia%20Edit%20Tags.ipynb">a tutorial</a> aimed at users who want to investigate trends in Wikipedia edits.</p>
+<p>Another contribution was for a project to build a tool to analyze how users navigate through Wikipedia, based on clickstream data. This task only required writing Python, although I ran into some challenges: the clickstream dataset is quite large, and using the idiomatic <code>if x in y</code> was prohibitively slow, so I wrote a little implementation of binary search to improve performance; and I initially couldn't figure out how to create a nice diagram showing clicks to and from an article. I started using <a href="https://networkx.org/documentation/stable/auto_examples/index.html"><code>networkx</code></a> but was dissatisfied with the results. Then a comment from another contributor turned me on to Sankey diagrams, and suggested <a href="https://plotly.com/python/">Plotly</a> as a way to graph them. I couldn't get Plotly to show up so I tried <a href="http://holoviews.org/gallery/index.html"><code>holoviews</code></a> and that worked great! I also used <code>pandas</code> a bit in this project, collecting Top 10 sources and destinations in English and German for a specific page, <code>Alan_Turing</code>. Check out the <a href="https://public.paws.wmcloud.org/User:Christalee_b/[Outreachy]%20Wikipedia%20Clickstream.ipynb">results</a>.</p>
+<p>Working on these notebooks was pretty fun, although I spent more time than I should've. I don't anticipate budgeting that much time for other job app take-homes, for example. But I wanted to do a good job and give it my best shot, which turns out to be pretty decent. Hopefully the mentors will agree with me and I'll get an internship!</p>
+    </div><!-- /.entry-content -->
+  </div>
+</section>
+<div class="prev post-info">
+ </div> <div class="next post-info">
+</div>
+
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/theme/js/scripts.js"></script>
+  </body>
+
+</html>
