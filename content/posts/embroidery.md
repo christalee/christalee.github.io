@@ -1,11 +1,8 @@
 title: Embroidery
 date: September 2020
 tags: hobbies, making
-
-<figure class="figure-img">
-<img src="/images/stitch-flw-1.jpg" />
-<figcaption class="small">Part of a Wright stained glass windows</figcaption>
-</figure>
+img: stitch-flw-1.jpg
+caption: Part of a Wright stained glass window
 
 As a child, I learned to cross-stitch. As an adult, I've returned to it as a relatively quiet, clean, soothing hobby I can pick up at idle moments that nevertheless produces something lasting and beautiful. Projects I've been working on include:
 
