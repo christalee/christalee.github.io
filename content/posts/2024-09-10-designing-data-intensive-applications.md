@@ -1,0 +1,12 @@
+title: immersing myself in a sea of data
+tags: RC, books, programming
+img: ddia.png
+caption: The illustration for Ch. 8, The Trouble with Distributed Systems.
+
+Another area in which I wanted to improve my understanding was system design, as I kept flubbing interviews on that topic. I considered jumping straight into Alex Xu's System Design Interview (vol. 1 or 2) but was convinced to instead tackle a classic text, Martin Kleppman's [Designing Data-Intensive Applications](https://dataintensive.net/). Published in 2017, it covers everything from database internals to consensus algorithms, and more. Learning system design is perhaps a side effect rather than the main goal here - primarily the book is about how to work with databases in various system architectures. It also mentions specific technologies when appropriate but these are necessarily dated and not exactly what you would want to pull out in an interview today. So it's not the only book you should read. But it's a solid foundation, anchored with clear examples, a wealth of citations, and delightfully whimsical drawings at the head of each chapter, illustrating the key  concepts coming up.
+
+To keep myself on track (and because I suspected I wasn't the only person with this goal), I solicited interest in a book group at RC. Every Friday, we discuss a new chapter of the book, focusing not on regurgitating the text but rather comparing notes on systems we've worked with in the context of the chapter topics. Luckily I have some great colleagues in this group who have worked extensively with e.g. multi-leader replication or protocol buffers. The group also cross-pollinates with the several other reading/discussion groups active in `#databases`, which means we sometimes get pointed towards relevant papers from academia.
+
+So far, I'm working on Chapter 9, taking [notes](https://docs.google.com/document/d/1Nvlz31bHdwPFLOHl9k9YaxBIQwaO-92efeTh7gvJsAg/edit) as I go. Hopefully the group will stick with me (the Summer 2 batch ends this week) through Chapter 12, but if not, I've gotten far enough on my own that I will probably finish it in the next ~month. This is the first non-fiction reading I've done in a few years, so I'm feeling rather accomplished - and hopefully it lays the foundation for a better understanding of system architecture as I progress in my career.
+
+Update: I see from O'Reilly's website that a [2nd edition](https://www.oreilly.com/library/view/designing-data-intensive-applications/9781098119058/) is forthcoming - exciting news!

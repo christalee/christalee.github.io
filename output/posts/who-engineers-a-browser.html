@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="Christalee Bieber" />
-    <title>Christalee Bieber - Teal Labs, Inc. - The Hacktory</title>
+    <title>Christalee Bieber - Teal Labs, Inc. - who engineers a browser?</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
@@ -19,10 +19,9 @@
 
 
 
-<meta name="tags" content="making" />
-<meta name="tags" content="hobbies" />
-<meta name="tags" content="portfolio" />
-<meta name="tags" content="education" />
+<meta name="tags" content="python" />
+<meta name="tags" content="programming" />
+<meta name="tags" content="RC" />
 
   </head>
 
@@ -70,12 +69,12 @@
   <div class="resume-section-content">
     <header>
       <h2 class="entry-title">
-        <a href="/posts/the-hacktory.html" rel="bookmark" title="Permalink to The Hacktory">The Hacktory</a></h2>
+        <a href="/posts/who-engineers-a-browser.html" rel="bookmark" title="Permalink to who engineers a browser?">who engineers a browser?</a></h2>
       
     </header>
     <footer class="post-info">
-      <time class="published" datetime="2013-06-18T00:00:00-04:00">
-        18 June 2013
+      <time class="published" datetime="2024-08-13T00:00:00-04:00">
+        13 August 2024
       </time>
       <address class="vcard author">
         By         <a class="url fn" href="/author/christalee-bieber.html">Christalee Bieber</a>
@@ -86,39 +85,13 @@
  -->
       <div class="tags">
         Tags:
-        <a href="/tag/making.html">making</a>,        <a href="/tag/hobbies.html">hobbies</a>,        <a href="/tag/portfolio.html">portfolio</a>,        <a href="/tag/education.html">education</a>      </div>
+        <a href="/tag/python.html">python</a>,        <a href="/tag/programming.html">programming</a>,        <a href="/tag/rc.html">RC</a>      </div>
     </footer><!-- /.post-info -->
     <div class="entry-content">
-      <figure class="figure-img">
-        <img src="/images/hacktory.jpg" />
-        <figcaption class="small">Intro to Sensors</figcaption>
-      </figure>
-      <p>When I moved to Philadelphia, I got involved in a local makerspace, The Hacktory. They provided a great platform for teaching others and tinkering on my own projects. Here are a few of the activities I worked on there.</p>
-<p>Introduction to Sensors, July 2012 (with Daniel Bergey): <a href="/files/sensors_overview.html">Overview</a></p>
-<ul>
-<li>Class 1 <a href="/files/sensors_class1_outline.pdf">Outline</a>, <a href="/files/sensors_class1_handout.pdf">Handout</a></li>
-<li>Class 2 <a href="/files/sensors_class2_outline.pdf">Outline</a>, <a href="/files/sensors_class2_handout.pdf">Handout</a></li>
-</ul>
-<p>Recycled Electronics Jewelry, December 2012: <a href="https://www.flickr.com/photos/thehacktory/albums/72157632148528018">Photos</a></p>
-<p>Starry Night T-Shirt, April 2013: <a href="/files/tshirt_workshop.pdf">Slides</a></p>
-<figure class="figure-img">
-<img src="/images/led_patch.jpg" />
-<figcaption class="small">Girl Scout Patches</figcaption>
-</figure>
-
-<p>Girl Scout Patches, May 2013: <a href="https://www.flickr.com/photos/thehacktory/albums/72157633628918935">Photos</a></p>
-<p>Meet the Multimeter, July 2013 (with Steph Alarcón): <a href="/files/multimeter_slides.pdf">Slides</a>, <a href="/files/multimeter_handout.pdf">Handout</a></p>
-<p>LED Lightbox, August 2013: <a href="https://www.flickr.com/photos/thehacktory/albums/72157635093569045">Photos</a></p>
-<p>Introduction to Circuits, September 2013 (with Abby Seligsohn): <a href="/files/circuits_slides.pdf">Slides</a>, <a href="/files/circuits_handout.pdf">Handout</a></p>
-<p>Sew an LED Mask, October 2013 (with Abby Seligsohn): <a href="/files/led_masks_handout.pdf">Handout</a></p>
-<p>Costuming with EL Wire, October 2013: <a href="https://www.flickr.com/photos/thehacktory/albums/72157633628918935">Photos</a></p>
-<p>Sew an LED Monster, June 2014 (with Allison Frick): <a href="/files/monsters_slides.pdf">Slides</a>, <a href="/files/monsters.pdf">Handout</a>, <a href="/files/led_monsters_supplies.txt">Supplies</a></p>
-<figure class="figure-img">
-<img src="/images/led_mask.jpg" />
-<figcaption class="small">Sew an LED Mask</figcaption>
-</figure>
-
-<p>Robot Jam, April 2016: <a href="https://www.flickr.com/photos/thehacktory/albums/72157667918411435">Photos</a></p>
+      <p>After my attempt to <a href="/posts/building-a-digital-breadboard.html">write a digital breadboard</a>, I turned back to job hunting for a while. But that quickly paled and I looked around for a project that would keep my fingers typing and my commits flowing. I stumbled across a group of folks at RC working their way through <a href="https://browser.engineering/index.html">Web Browser Engineering</a>, a book designed around writing your own web browser, so you too can appreciate all the quirks that go into loading, parsing, and displaying web content.</p>
+<p>Chapter 1 starts out with the basics: loading webpages and printing them to the terminal. Then it gets serious: over the next few chapters, you use <code>tkinter</code> (if you're using Python) to render a  window where you print webpages, first character by character and then word by word. By the time you hit Chapter 5, you've parsed your HTML into a tree of elements and you're creating a layout tree to match it. Chapter 6 covers CSS and exemplifies the book: the task at hand sounds daunting, but the book breaks it down (cutting scope aggressively) into something you can accomplish, and leads you through it.</p>
+<p>Every chapter does have exercises extending the browser, which are not reflected in future chapters, so the reader's implementation diverges from the book's ideal implementation over time. This can be confusing, if you've written or refactored extra methods or different variable names, and now have to add functionality in a specific spot. But overall the exercises are a good idea, even if it might be simpler to work through the book as-written and then go back again to add the "extra" functionality in a second pass.</p>
+<p>Working through this book with a group has been very helpful in terms of keeping myself on track; although no one was committed to a certain pace, generally everyone made some forward progress every week and we could share our wins and questions. The book doesn't say anything about testing, although there are test helpers in the <a href="https://github.com/browserengineering/book/tree/main/src">repo</a>, but nearly all of us chose to write some anyway. I fell behind on that score, and it's where I plan to pick up this project the next time I come back to it. In the meantime, my progress (through Chapter 6) is <a href="https://github.com/christalee/browser.engineering">here on GitHub</a>.</p>
     </div><!-- /.entry-content -->
   </div>
 </section>

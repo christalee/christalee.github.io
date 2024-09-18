@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta name="description" content="" />
     <meta name="author" content="Christalee Bieber" />
-    <title>Christalee Bieber - Teal Labs, Inc. - Cost of Drinking</title>
+    <title>Christalee Bieber - Teal Labs, Inc. - building a digital breadboard</title>
     <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
@@ -19,12 +19,8 @@
 
 
 
-<meta name="tags" content="portfolio" />
-<meta name="tags" content="programming" />
-<meta name="tags" content="hobbies" />
-<meta name="tags" content="python" />
 <meta name="tags" content="javascript" />
-<meta name="tags" content="RC" />
+<meta name="tags" content="programming" />
 
   </head>
 
@@ -72,12 +68,12 @@
   <div class="resume-section-content">
     <header>
       <h2 class="entry-title">
-        <a href="/posts/cost-of-drinking.html" rel="bookmark" title="Permalink to Cost of Drinking">Cost of Drinking</a></h2>
+        <a href="/posts/building-a-digital-breadboard.html" rel="bookmark" title="Permalink to building a digital breadboard">building a digital breadboard</a></h2>
       
     </header>
     <footer class="post-info">
-      <time class="published" datetime="2021-02-18T00:00:00-05:00">
-        18 February 2021
+      <time class="published" datetime="2024-06-17T00:00:00-04:00">
+        17 June 2024
       </time>
       <address class="vcard author">
         By         <a class="url fn" href="/author/christalee-bieber.html">Christalee Bieber</a>
@@ -88,16 +84,25 @@
  -->
       <div class="tags">
         Tags:
-        <a href="/tag/portfolio.html">portfolio</a>,        <a href="/tag/programming.html">programming</a>,        <a href="/tag/hobbies.html">hobbies</a>,        <a href="/tag/python.html">python</a>,        <a href="/tag/javascript.html">javascript</a>,        <a href="/tag/rc.html">RC</a>      </div>
+        <a href="/tag/javascript.html">javascript</a>,        <a href="/tag/programming.html">programming</a>      </div>
     </footer><!-- /.post-info -->
     <div class="entry-content">
       <figure class="figure-img">
-        <img src="/images/cola-map.png" />
-        <figcaption class="small"></figcaption>
+        <img src="/images/react_breadboard.png" />
+        <figcaption class="small">A simple circuit on my breadboard-simulation frontend.</figcaption>
       </figure>
-      <p>When I started at the Recurse Center, I had several vague ideas of projects I wanted to work on. A throwaway comment on the price of beer in Budapest inspired me to see if beer could be used as a cost of living metric. The first maps I found polled a single city per country, typically the capital or largest city, which seemed unrepresentative: everyone knows the cost of living is high in New York, Tokyo, or London. So I wanted to gather data by city, average it across various sources, and map it. Since beer is not globally popular, though (in Saudi Arabia, it's illegal), I decided to expand my analysis to coffee, which is widely available even in non-coffee cultures, and bread, since everyone needs something to nibble on with their beer. (In my household, we make some of our beer and bake some of our bread; we do not roast our own coffee.)</p>
-<p>I collaborated with <a href="https://github.com/apettenati">apettenati</a> on the data scraping (<a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">Beautiful Soup</a>) and cleaning (<a href="https://pandas.pydata.org/">pandas</a>) phase. We split up our data sources: DeutscheBank's <a href="https://www.dbresearch.com/PROD/RPS_EN-PROD/Mapping_the_world_prices_2019/RPS_EN_DOC_VIEW.calias?rwnode=PROD0000000000436748&amp;ProdCollection=PROD0000000000505140">survey of world prices</a>, <a href="https://www.expatistan.com/cost-of-living">Expatistan</a>, <a href="https://www.numbeo.com/cost-of-living/">Numbeo</a>, and <a href="http://www.pintprice.com/">PintPrice</a>. Initially I made a proof-of-concept map in <a href="https://python-visualization.github.io/folium/">folium</a>, but quickly realized I needed to switch to JavaScript, for a feature that restricted the number of markers based on the zoom level, to avoid overcrowding the map. So I tried <a href="https://leafletjs.com/">Leaflet.JS</a> and found it reasonably easy to work with. Folium had given me the idea for charts in popups, though, so I turned to <a href="https://www.chartjs.org/">Chart.JS</a> to create those. I'm still not entirely comfortable in JavaScript but this project was a major step forward in my understanding. The payoff of having a snazzy visualization was surprisingly motivational (in direct contrast to the data cleaning phase, which was tedious beyond belief but also essential.)</p>
-<p>Check out the code on <a href="https://github.com/christalee/cost-of-drinking">Github</a> and the map itself <a href="/pages/cost-of-drinking.html">here</a>.</p>
+      <p>Earlier this year I was laid off from my job. As I wandered through a morass of job listings and LeetCode, I wanted to write something that demonstrated my React skills more extensively than my rc-niceties portfolio project. I also wanted an excuse to try out Typescript, as I had only previously worked with prop-types. I cast around for some idea that would spark joy, and landed on literal sparks: I would build a digital breadboard that would tell you if the light(s) turn on when you flip the switch.</p>
+<p>As this was meant to be a React showpiece, I started with the front end. I roughed out a grid of squares and their click handlers, then turned my attention to the actual components. Initially I drew the grid as <code>divs</code> and the circuit elements as <code>svgs</code> in a separate layer, but this quickly caused problems: clicks only registered on the front-most component. So I refactored to render everything as an SVG in a parent SVG. Then I added tooltips (anticipating the eventual need to display the voltage and current for each component); a basic control panel for the voltage, grid size, and circuit element selectors; and minimal styling, based on <a href="https://palettes.shecodes.io/palettes/1448#palette">this blue-gray palette</a>. </p>
+<p>With the front-end coming along nicely enough, I turned my attention to the actual circuit solving code. This turned out to be a huge can of worms - I was hoping for a straightforward package I could install and use from a basic backend, ideally Node or Flask... but instead I found a bunch of options, none of which I could figure out how to get working in my environment. I settled pretty early on for not trying to reinvent the wheel, which meant coordinating my input/output format with that of SPICE, the Berkeley Simulation Program with Integrated Circuit Emphasis. I found at least two different Python packages purporting to work with netlists, <a href="https://github.com/PySpice-org/PySpice">PySpice</a> and <a href="https://github.com/giaccone/SpicePy">SpicePy</a>, but I couldn't get them working. </p>
+<p>I also considered writing my own circuit solver, inspired by / borrowing from existing implementations. This seemed like overkill, however, and like my project would join the graveyard of barely-documented projects I'd already found. Of particular concern was that I wanted to work with LEDs, not regular R lights, which have a nonlinear response curve and would be hard to incorporate into a basic analysis. Ultimately, I put this project down, with the intent to come back to it sometime when I was relishing an intellectual challenge, possibly with a collaborator who could guide me through the pitfalls of modeling physical systems with code. I feel successful in my first foray into Typescript, even if the project is stalled. In the meantime, the project is <a href="https://github.com/christalee/react-breadboard">here on GitHub</a>.</p>
+<p>Some additional resources, for the next time I pick this project up:</p>
+<ul>
+<li><a href="https://github.com/dan-fritchman/Spice21">dan-fritchman's Spice21 (Rust, library)</a></li>
+<li><a href="https://github.com/gatecat/BreadboardSim">gatecat's BreadboardSim (C++, project)</a></li>
+<li><a href="https://github.com/hlorenzi/circuitsim/tree/master">hlorenzi's circuitsim (JS, project)</a></li>
+<li><a href="https://github.com/pfalstad/circuitjs1/tree/master">pfalstad's circuitjs (Java, project)</a></li>
+<li><a href="https://github.com/danchitnis/EEsim/tree/main">danchitnis' EEsim (JS, project)</a></li>
+</ul>
     </div><!-- /.entry-content -->
   </div>
 </section>
