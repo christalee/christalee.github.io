@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="Christalee Bieber" />
+    <title>Christalee Bieber - Teal Labs, Inc. - What is the sound of one gem shining?</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
+      crossorigin="anonymous"></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/theme/css/hexagons.css" rel="stylesheet" />
+    <link href="/theme/css/friendly.css" rel="stylesheet" />
+    <link href="/theme/css/styles.css" rel="stylesheet" />
+
+
+
+
+<meta name="tags" content="ruby" />
+<meta name="tags" content="programming" />
+
+  </head>
+
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger hex-link" href="#page-top">
+        <span class="d-block d-lg-none">Christalee Bieber - Teal Labs, Inc.</span>
+        <span class="d-none d-lg-block">
+          <div class="hex-profile">
+            <img class="img-fluid mx-auto" src="/images/profile.jpg"
+              alt="" />
+          </div>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/pages/resume.html">Resume</a></li>
+          <li class="nav-item">
+            <div class="social-icons">
+              <a class="social-icon" href="https://github.com/christalee"><i
+                  class="fab fa-github"></i></a>
+              <a class="social-icon" href="https://www.linkedin.com/in/christalee-bieber/"><i
+                  class="fab fa-linkedin-in"></i></a>
+              <a class="social-icon" href="mailto:christalee@teallabs.org"><i
+                  class="fas fa-at"></i></a>
+              <a class="social-icon" href="https://christalee.teallabs.org/feeds/rss.xml"><i
+                  class="fas fa-rss"></i></a>
+            </div>
+            <div class="rc-scout" style="height: 1.5rem; margin: 1rem auto;"></div>
+          </li>
+        </ul>
+        
+      </div>
+    </nav>
+    <!-- Page Content-->
+    <div class="container-fluid p-0">
+<section id="content" class="resume-section">
+  <div class="resume-section-content">
+    <header>
+      <h2 class="entry-title">
+        <a href="/posts/what-is-the-sound-of-one-gem-shining.html" rel="bookmark" title="Permalink to What is the sound of one gem shining?">What is the sound of one gem shining?</a></h2>
+      
+    </header>
+    <footer class="post-info">
+      <time class="published" datetime="2024-09-28T00:00:00-04:00">
+        28 September 2024
+      </time>
+      <address class="vcard author">
+        By         <a class="url fn" href="/author/christalee-bieber.html">Christalee Bieber</a>
+      </address>
+      <!--       <div class="category">
+        Category: <a href="/category/posts.html">posts</a>
+      </div>
+ -->
+      <div class="tags">
+        Tags:
+        <a href="/tag/ruby.html">ruby</a>,        <a href="/tag/programming.html">programming</a>      </div>
+    </footer><!-- /.post-info -->
+    <div class="entry-content">
+      <p>These past couple of weeks I've been learning <a href="https://www.ruby-lang.org/en/">Ruby</a>, a language with a design philosophy similar to <a href="https://www.python.org/">Python</a>: high-level code that's easy to read and write. I started with the classic beginner's text, <a href="https://poignant.guide/book/">Why's (Poignant) Guide to Ruby</a>, a gonzo adventure through the language, but tapped out partway through Chapter 5, when they introduce the syntax <code>class &lt;&lt; LotteryDraw</code> which uses a concatenation operator to create a class method inside <code>LotteryDraw</code>. This seemed pretty obscure to me, so I went looking for a more germane resource: a cheatsheet for Pythonistas coming to Ruby. I found a straight <a href="https://www.codecademy.com/learn/learn-ruby/modules/learn-ruby-introduction-to-ruby-u/cheatsheet">Ruby cheatsheet</a> on Codecademy, and decided to work through their free course <a href="https://www.codecademy.com/enrolled/courses/learn-ruby">Learn Ruby</a>. I also decided to test my knowledge by working through <a href="https://github.com/edgecase/ruby_koans">Ruby Koans</a>, a tour of the language features via tests, where you practice the TDD mantra "red, green, refactor". Which is to say: the tests are written, but failing; it's up to you to correct them so they pass, and then optionally refactor them to be more robust.</p>
+<p>Coming from Python, I initially struggled with the parts of the syntax which are just similar enough but different. For example, in Ruby, only <code>false</code> and <code>nil</code> are falsy; <code>[], {}, "", 0</code> are all truthy. Or for iterable slicing, what I would write in Python as <code>iterable[start:finish:step]</code> is in Ruby <code>iterable[start, length_of_slice]</code>, e.g <code>"string"[2, 3]</code> gives <code>"rin"</code>. Or you can use a range, <code>"string"[2..4]</code> also gives <code>"rin"</code>. (I have yet to decide whether I favor the two-dot or three-dot syntax for ranges - the first is inclusive, the second is exclusive. Pretty sure I should pick one, for my sanity!)</p>
+<p>As an aide memoire for myself and anyone else coming to Ruby in the year 2024, here are some of the trickiest corners of the syntax I've found. (Note that they use a custom assert method; see <code>neo.rb</code> in Ruby Koans for details.)</p>
+<div class="highlight"><pre><span></span><code><span class="c1"># Strings, arrays, and hashes are compared by value (hashes are unordered); </span>
+<span class="c1"># TODO understand how comparisons are made for objects</span>
+
+<span class="c1"># Flexible quotes, where you prefix % and use any delimiter for the </span>
+<span class="c1"># beginning and end of the string</span>
+<span class="n">long_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="sx">%{</span>
+<span class="sx">It was the best of times,</span>
+<span class="sx">It was the worst of times.</span>
+<span class="sx">}</span>
+
+<span class="n">assert_equal</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="n">long_string</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">count</span>
+
+<span class="c1"># Something called documents, where you prefix &lt;&lt; and use any delimiter for</span>
+<span class="c1"># the beginning and end of a multi-line string (must start on a new line!)</span>
+<span class="n">long_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="dl">EOS</span>
+<span class="sh">It was the best of times,</span>
+<span class="sh">It was the worst of times.</span>
+<span class="dl">EOS</span>
+
+<span class="n">assert_equal</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">long_string</span><span class="o">.</span><span class="n">lines</span><span class="o">.</span><span class="n">count</span>
+
+<span class="c1"># For string concatenation, += does not modify the original string </span>
+<span class="c1"># but &lt;&lt; does 🤯</span>
+<span class="n">original_string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;Hello, &quot;</span>
+<span class="n">hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">original_string</span>
+<span class="n">there</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;World&quot;</span>
+
+<span class="n">hi</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="n">there</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="s2">&quot;Hello, &quot;</span><span class="p">,</span><span class="w"> </span><span class="n">original_string</span>
+
+<span class="n">hi</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">original_string</span>
+<span class="n">hi</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">there</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="s2">&quot;Hello, World&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">original_string</span>
+
+<span class="c1"># Double-quoted strings interpret escape characters but single-quoted </span>
+<span class="c1"># strings do not, except sometimes; double-quoted strings interpolate </span>
+<span class="c1"># variables but single-quoted strings do not</span>
+<span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">&quot;</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">.</span><span class="n">size</span>
+
+<span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">.</span><span class="n">size</span>
+
+<span class="n">string</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;</span><span class="se">\\\&#39;</span><span class="s1">&#39;</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="n">string</span><span class="o">.</span><span class="n">size</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="s2">&quot;</span><span class="se">\\</span><span class="s2">&#39;&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">string</span>
+
+<span class="c1"># Less surprising but good to know: Python&#39;s </span>
+<span class="c1"># &#39;delimiter.join(array_of_str)&#39; is Ruby&#39;s &#39;array_of_str.join(delimiter)&#39;</span>
+<span class="n">words</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;Now&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;is&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;the&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;time&quot;</span><span class="o">]</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="s2">&quot;Now is the time&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">words</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="p">)</span>
+
+<span class="c1"># Symbols are prefixed by :, can contain spaces via double quotes, are not </span>
+<span class="c1"># strings, are immutable, can be interpolated (!), and are somehow &quot;cheaper&quot; </span>
+<span class="c1"># than strings. So they are preferred when passing names around.</span>
+<span class="n">symbol</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">:&quot;cats </span><span class="si">#{</span><span class="n">value</span><span class="si">}</span><span class="ss"> dogs&quot;</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="ss">:&quot;cats and dogs&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">symbol</span>
+
+<span class="c1"># This is truly wild - you can index 1 past the last index in an array </span>
+<span class="c1"># without causing an error. The only way this makes sense to me is if you </span>
+<span class="c1"># can ask for a negative slice, but array[4, -2] is apparently not valid. </span>
+<span class="c1"># Asking for a slice that goes past the end of the array does not error, either.</span>
+<span class="n">array</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="ss">:peanut</span><span class="p">,</span><span class="w"> </span><span class="ss">:butter</span><span class="p">,</span><span class="w"> </span><span class="ss">:and</span><span class="p">,</span><span class="w"> </span><span class="ss">:jelly</span><span class="o">]</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="o">[</span><span class="ss">:peanut</span><span class="p">,</span><span class="w"> </span><span class="ss">:butter</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">array</span><span class="o">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">2</span><span class="o">]</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="o">[]</span><span class="p">,</span><span class="w"> </span><span class="n">array</span><span class="o">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">0</span><span class="o">]</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="o">[]</span><span class="p">,</span><span class="w"> </span><span class="n">array</span><span class="o">[</span><span class="mi">4</span><span class="p">,</span><span class="mi">100</span><span class="o">]</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="kp">nil</span><span class="p">,</span><span class="w"> </span><span class="n">array</span><span class="o">[</span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="o">-</span><span class="mi">2</span><span class="o">]</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="kp">nil</span><span class="p">,</span><span class="w"> </span><span class="n">array</span><span class="o">[</span><span class="mi">5</span><span class="p">,</span><span class="mi">0</span><span class="o">]</span>
+
+<span class="c1"># Ruby has a handy &#39;*&#39; syntax when doing parallel assignment, </span>
+<span class="c1"># like &#39;...rest&#39; destructuring in JavaScript</span>
+<span class="n">first_name</span><span class="p">,</span><span class="w"> </span><span class="o">*</span><span class="n">last_name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Smith&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;III&quot;</span><span class="o">]</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="s2">&quot;John&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">first_name</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;Smith&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;III&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="n">last_name</span>
+
+<span class="c1"># nil can be converted to the empty string and inspected</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="p">,</span><span class="w"> </span><span class="kp">nil</span><span class="o">.</span><span class="n">to_s</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="s2">&quot;nil&quot;</span><span class="p">,</span><span class="w"> </span><span class="kp">nil</span><span class="o">.</span><span class="n">inspect</span>
+
+<span class="c1"># nil is also the result of accessing a key not in the hash via brackets </span>
+<span class="c1"># if no default is given, but an error is raised when using fetch</span>
+<span class="nb">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="ss">:one</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s2">&quot;uno&quot;</span><span class="p">,</span><span class="w"> </span><span class="ss">:two</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="s2">&quot;dos&quot;</span><span class="w"> </span><span class="p">}</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="kp">nil</span><span class="p">,</span><span class="w"> </span><span class="nb">hash</span><span class="o">[</span><span class="ss">:doesnt_exist</span><span class="o">]</span>
+<span class="n">assert_raise</span><span class="p">(</span><span class="no">KeyError</span><span class="p">)</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nb">hash</span><span class="o">.</span><span class="n">fetch</span><span class="p">(</span><span class="ss">:doesnt_exist</span><span class="p">)</span>
+<span class="k">end</span>
+
+<span class="c1"># Using a mutable object as the default value is fraught!</span>
+<span class="nb">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Hash</span><span class="o">.</span><span class="n">new</span><span class="p">(</span><span class="o">[]</span><span class="p">)</span>
+<span class="nb">hash</span><span class="o">[</span><span class="ss">:one</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;uno&quot;</span>
+<span class="nb">hash</span><span class="o">[</span><span class="ss">:two</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;dos&quot;</span>
+
+<span class="n">assert_equal</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;uno&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dos&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="nb">hash</span><span class="o">[</span><span class="ss">:one</span><span class="o">]</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;uno&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dos&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="nb">hash</span><span class="o">[</span><span class="ss">:two</span><span class="o">]</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;uno&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;dos&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="nb">hash</span><span class="o">[</span><span class="ss">:three</span><span class="o">]</span>
+
+<span class="n">assert_equal</span><span class="w"> </span><span class="kp">true</span><span class="p">,</span><span class="w"> </span><span class="nb">hash</span><span class="o">[</span><span class="ss">:one</span><span class="o">].</span><span class="n">object_id</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="nb">hash</span><span class="o">[</span><span class="ss">:two</span><span class="o">].</span><span class="n">object_id</span>
+
+<span class="c1"># Instead, use a block:</span>
+<span class="nb">hash</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="no">Hash</span><span class="o">.</span><span class="n">new</span><span class="w"> </span><span class="p">{</span><span class="o">|</span><span class="nb">hash</span><span class="p">,</span><span class="w"> </span><span class="n">key</span><span class="o">|</span><span class="w"> </span><span class="nb">hash</span><span class="o">[</span><span class="n">key</span><span class="o">]</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[]</span><span class="w"> </span><span class="p">}</span>
+<span class="nb">hash</span><span class="o">[</span><span class="ss">:one</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;uno&quot;</span>
+<span class="nb">hash</span><span class="o">[</span><span class="ss">:two</span><span class="o">]</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s2">&quot;dos&quot;</span>
+
+<span class="n">assert_equal</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;uno&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="nb">hash</span><span class="o">[</span><span class="ss">:one</span><span class="o">]</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="o">[</span><span class="s2">&quot;dos&quot;</span><span class="o">]</span><span class="p">,</span><span class="w"> </span><span class="nb">hash</span><span class="o">[</span><span class="ss">:two</span><span class="o">]</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="o">[]</span><span class="p">,</span><span class="w"> </span><span class="nb">hash</span><span class="o">[</span><span class="ss">:three</span><span class="o">]</span>
+
+<span class="c1"># You can make global methods private but without self, they won&#39;t</span>
+<span class="c1"># be protected (I&#39;m not too hot on self, generally speaking.)</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">my_private_method</span>
+<span class="w">  </span><span class="s2">&quot;a secret&quot;</span>
+<span class="k">end</span>
+<span class="kp">private</span><span class="w"> </span><span class="ss">:my_private_method</span>
+
+<span class="n">assert_equal</span><span class="w"> </span><span class="s2">&quot;a secret&quot;</span><span class="p">,</span><span class="w"> </span><span class="n">my_private_method</span>
+<span class="n">assert_raise</span><span class="p">(</span><span class="no">NoMethodError</span><span class="p">)</span><span class="w"> </span><span class="k">do</span>
+<span class="w">  </span><span class="nb">self</span><span class="o">.</span><span class="n">my_private_method</span>
+<span class="k">end</span>
+
+<span class="c1"># Inheritance in nested classes is a bit tricky. Just keep it in mind.</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">Animal</span>
+<span class="w">  </span><span class="no">LEGS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">legs_in_animal</span>
+<span class="w">    </span><span class="no">LEGS</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="k">end</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyAnimals</span>
+<span class="w">  </span><span class="no">LEGS</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">2</span>
+
+<span class="w">  </span><span class="k">class</span><span class="w"> </span><span class="nc">Bird</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">Animal</span>
+<span class="w">    </span><span class="k">def</span><span class="w"> </span><span class="nf">legs_in_bird</span>
+<span class="w">      </span><span class="no">LEGS</span>
+<span class="w">    </span><span class="k">end</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">assert_equal</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="no">MyAnimals</span><span class="o">::</span><span class="no">Bird</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">legs_in_bird</span>
+
+<span class="k">class</span><span class="w"> </span><span class="nc">MyAnimals</span><span class="o">::</span><span class="no">Oyster</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="no">Animal</span>
+<span class="w">  </span><span class="k">def</span><span class="w"> </span><span class="nf">legs_in_oyster</span>
+<span class="w">    </span><span class="no">LEGS</span>
+<span class="w">  </span><span class="k">end</span>
+<span class="k">end</span>
+
+<span class="n">assert_equal</span><span class="w"> </span><span class="mi">4</span><span class="p">,</span><span class="w"> </span><span class="no">MyAnimals</span><span class="o">::</span><span class="no">Oyster</span><span class="o">.</span><span class="n">new</span><span class="o">.</span><span class="n">legs_in_oyster</span>
+
+<span class="c1"># Compared to Python&#39;s &#39;re.match&#39; object, Ruby is a bit more loosey-goosey.</span>
+<span class="c1"># Where do these (global?) &#39;$variables&#39; come from?</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="s2">&quot;Gray, James&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;Name:  Gray, James&quot;</span><span class="o">[</span><span class="sr">/(\w+), (\w+)/</span><span class="o">]</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="s2">&quot;Gray&quot;</span><span class="p">,</span><span class="w"> </span><span class="vg">$1</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="s2">&quot;James&quot;</span><span class="p">,</span><span class="w"> </span><span class="vg">$2</span>
+
+<span class="c1"># I just don&#39;t like &#39;unless&#39; as a control statement. Python &#39;continue&#39; </span>
+<span class="c1"># is Ruby &#39;next if condition&#39;.</span>
+
+<span class="c1"># I&#39;m intrigued by the Ruby convention of ending methods that return </span>
+<span class="c1"># booleans with ? (obj.is_a?(class)) and methods that modify their </span>
+<span class="c1"># callers in-place with ! (string.gsub!(regexp) { block }) and methods </span>
+<span class="c1"># that assign values with = (are there any built-in examples?). I&#39;m bemused</span>
+<span class="c1"># by the theory that parentheses are optional; I think I will keep them </span>
+<span class="c1"># in for clarity where possible. (Obviously I will follow the conventions of </span>
+<span class="c1"># the codebase I&#39;m working in. I hope there is good linting support for that.)</span>
+
+<span class="c1"># Ruby has both &#39;collect&#39; and &#39;map&#39; (synonyms). It also has &#39;select&#39; and</span>
+<span class="c1"># &#39;find_all&#39; (synonyms for &#39;filter&#39;). It calls &#39;reduce&#39; as &#39;inject&#39;. </span>
+<span class="c1"># These are all array methods.</span>
+<span class="n">result</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">].</span><span class="n">inject</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">sum</span><span class="p">,</span><span class="w"> </span><span class="n">item</span><span class="o">|</span><span class="w"> </span><span class="n">sum</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="p">}</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="mi">9</span><span class="p">,</span><span class="w"> </span><span class="n">result</span>
+
+<span class="n">result2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="o">[</span><span class="mi">2</span><span class="p">,</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w"> </span><span class="mi">4</span><span class="o">].</span><span class="n">inject</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="o">|</span><span class="n">product</span><span class="p">,</span><span class="w"> </span><span class="n">item</span><span class="o">|</span><span class="w"> </span><span class="n">product</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">item</span><span class="w"> </span><span class="p">}</span>
+<span class="n">assert_equal</span><span class="w"> </span><span class="mi">24</span><span class="p">,</span><span class="w"> </span><span class="n">result2</span>
+
+<span class="c1"># I don&#39;t understand the use of &#39;yield&#39;. It makes sense when I read it, </span>
+<span class="c1"># more or less, but I can&#39;t imagine wielding it effectively. </span>
+<span class="c1"># (I am fuzzy on Python &#39;yield&#39; (generators) as well.)</span>
+
+<span class="c1"># I&#39;m also not too clear on class vs. instance methods. I&#39;m beginning to </span>
+<span class="c1"># understand when I would use one vs. the other but I would like </span>
+<span class="c1"># more examples to cement that. </span>
+</code></pre></div>
+    </div><!-- /.entry-content -->
+  </div>
+</section>
+<div class="prev post-info">
+ </div> <div class="next post-info">
+</div>
+
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/theme/js/scripts.js"></script>
+    <script async defer src="https://www.recurse-scout.com/loader.js?t=f48eec73f6cf0a45269638ef5f36903b"></script>
+  </body>
+
+</html>
