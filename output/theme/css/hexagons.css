@@ -41,8 +41,6 @@
   outline: 1px solid transparent;
 
   /* fix for jagged edges in FF on hover transition */
-  -webkit-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
-  -ms-transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
   transform: rotate3d(0, 0, 1, -60deg) skewY(30deg);
 }
 
@@ -61,8 +59,6 @@
   text-align: center;
   color: #fff;
   overflow: hidden;
-  -webkit-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
-  -ms-transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
   transform: skewY(-30deg) rotate3d(0, 0, 1, 60deg);
 }
 
@@ -73,8 +69,6 @@
   width: auto;
   height: 100%;
   margin: 0 auto;
-  -webkit-transform: rotate3d(0, 0, 0, 0deg);
-  -ms-transform: rotate3d(0, 0, 0, 0deg);
   transform: rotate3d(0, 0, 0, 0deg);
 }
 
@@ -85,8 +79,6 @@
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.8);
 
-  /* font-weight: 300; */
-  -webkit-transition: -webkit-transform 0.2s ease-out, opacity 0.3s ease-out;
   transition: transform 0.2s ease-out, opacity 0.3s ease-out;
 }
 
@@ -95,8 +87,7 @@
   padding-top: 50%;
   font-size: 1.5em;
   z-index: 1;
-  -webkit-transform: translate3d(0, -100%, 0);
-  -ms-transform: translate3d(0, -100%, 0);
+  margin-bottom: 0;
   transform: translate3d(0, -100%, 0);
 }
 
@@ -113,8 +104,6 @@
 .hex p {
   top: 50%;
   padding-bottom: 50%;
-  -webkit-transform: translate3d(0, 100%, 0);
-  -ms-transform: translate3d(0, 100%, 0);
   transform: translate3d(0, 100%, 0);
 }
 
@@ -124,8 +113,6 @@
 .hexLink:focus h1,
 .hexLink:hover p,
 .hexLink:focus p {
-  -webkit-transform: translate3d(0, 0, 0);
-  -ms-transform: translate3d(0, 0, 0);
   transform: translate3d(0, 0, 0);
 }
 
@@ -216,6 +203,6 @@
 
 @media (max-width: 400px) {
   #hexGrid {
-    /* font-size: 13px; */
+    font-size: 13px;
   }
 }
