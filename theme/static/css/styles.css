@@ -11233,7 +11233,7 @@ section.resume-section {
   padding-left: 1rem;
   padding-right: 1rem;
   padding-top: 5rem;
-  padding-bottom: 5rem;
+  padding-bottom: 2rem; /* absorb 3rem bottom margin on content items (mb-5) */
   max-width: 75rem;
 }
 
@@ -11252,6 +11252,6 @@ section.resume-section .resume-section-content {
     padding-left: 3rem;
     padding-right: 3rem;
     padding-top: 5rem;
-    padding-bottom: 5rem;
+    padding-bottom: 2rem; /* absorb 3rem bottom margin on content items (mb-5) */
   }
 }
