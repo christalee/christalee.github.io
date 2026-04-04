@@ -78,7 +78,7 @@
   padding: 5%;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 0.8);
-
+  line-height: 1.25;
   transition: transform 0.2s ease-out, opacity 0.3s ease-out;
 }
 
@@ -190,7 +190,7 @@
   .hex {
     width: 50%;
 
-    /* = 100 / 3 */
+    /* = 100 / 2 */
   }
 
   .hex:nth-child(3n+3) {
