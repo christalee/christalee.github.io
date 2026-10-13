@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="Christalee Bieber" />
+    <title>Christalee Bieber - Teal Labs, Inc. - Deploying WeLC</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
+      crossorigin="anonymous"></script>
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="/theme/css/hexagons.css" rel="stylesheet" />
+    <link href="/theme/css/friendly.css" rel="stylesheet" />
+    <link href="/theme/css/styles.css" rel="stylesheet" />
+
+
+
+
+<meta name="tags" content="javascript" />
+<meta name="tags" content="python" />
+<meta name="tags" content="programming" />
+
+  </head>
+
+  <body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+      <a class="navbar-brand js-scroll-trigger hex-link" href="#page-top">
+        <span class="d-block d-lg-none">Christalee Bieber - Teal Labs, Inc.</span>
+        <span class="d-none d-lg-block">
+          <div class="hex-profile">
+            <img class="img-fluid mx-auto" src="/images/profile.jpg"
+              alt="" />
+          </div>
+        </span>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse"
+        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/index.html#about">About</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/index.html#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/blog.html">Blog</a></li>
+          <li class="nav-item"><a class="nav-link js-scroll-trigger" href="/pages/resume.html">Resume</a></li>
+          <li class="nav-item">
+            <div class="social-icons">
+              <a class="social-icon" href="https://github.com/christalee"><i
+                  class="fab fa-github"></i></a>
+              <a class="social-icon" href="https://www.linkedin.com/in/christalee-bieber/"><i
+                  class="fab fa-linkedin-in"></i></a>
+              <a class="social-icon" href="mailto:christalee@teallabs.org"><i
+                  class="fas fa-at"></i></a>
+              <a class="social-icon" href="https://christalee.teallabs.org/feeds/rss.xml"><i
+                  class="fas fa-rss"></i></a>
+            </div>
+            <div class="rc-scout" style="height: 1.5rem; margin: 1rem auto;"></div>
+          </li>
+        </ul>
+        
+      </div>
+    </nav>
+    <!-- Page Content-->
+    <div class="container-fluid p-0">
+<section id="content" class="resume-section">
+  <div class="resume-section-content">
+    <header>
+      <h2 class="entry-title">
+        <a href="/posts/deploying-welc.html" rel="bookmark" title="Permalink to Deploying WeLC">Deploying WeLC</a></h2>
+      
+    </header>
+    <footer class="post-info">
+      <time class="published" datetime="2026-10-13T00:00:00-04:00">
+        13 October 2026
+      </time>
+      <address class="vcard author">
+        By         <a class="url fn" href="/author/christalee-bieber.html">Christalee Bieber</a>
+      </address>
+      <!--       <div class="category">
+        Category: <a href="/category/posts.html">posts</a>
+      </div>
+ -->
+      <div class="tags">
+        Tags:
+        <a href="/tag/javascript.html">javascript</a>,        <a href="/tag/python.html">python</a>,        <a href="/tag/programming.html">programming</a>      </div>
+    </footer><!-- /.post-info -->
+    <div class="entry-content">
+      <p>On and off for the past few months, I've been building a simple audio player app, with the goal of making our music library accessible from our phones, outside the home - the music itself lives on our home server. I'm calling the project WeLC, a play on VLC, the gold standard program in this domain. (Why not just use VLC? I'm trying to learn by putting concepts into practice, specifically backend API design and system design.) The repo is <a href="https://github.com/christalee/welc">here</a>.</p>
+<p>It's reached the point where users can start pressure-testing it, so I decided to deploy it onto the server with the music. (The program is locked down to only be able to access files in a local directory specified by an environment variable, to prevent malicious users from sniffing the filesystem.) The frontend is a React/TypeScript app using <a href="https://vite.dev/">Vite</a>, talking to a <a href="https://flask.palletsprojects.com/en/stable/">Flask</a> backend and a <a href="https://www.postgresql.org/">Postgres</a> database. The server is running Ubuntu Desktop 26.04, using <a href="https://caddyserver.com/">Caddy</a> as a reverse proxy for the backend and a static file server for the frontend, and <a href="https://tailscale.com/">Tailscale</a> to permit access from authorized machines. This post doesn't cover the Tailscale setup, as that was done previously and didn't need to change. Here's what needed to happen with the rest of it.</p>
+<ol>
+<li>
+<p>Clone the repo into your projects folder (or the location of your choice), creating <code>/home/projects/welc</code>. </p>
+</li>
+<li>
+<p>cd into <code>/home/projects/welc/api</code> and create a venv (currently on Python 3.14), activate it, then install the backend from the <code>requirements.txt</code> file.</p>
+</li>
+<li>
+<p>Postgres is already running (to provide DBs for other projects), so create a user <code>welc</code> with a password and create a database <code>welc</code> owned by user <code>welc</code> (<code>createdb welc -O welc</code>).</p>
+</li>
+<li>
+<p>In the project folder, create a file <code>.env.production</code> to hold program-specific env vars. The DB name, username, and password all go in there (see the README for details on what else needs to be populated).</p>
+</li>
+<li>
+<p>From inside the venv, run <code>alembic --name production upgrade head</code> to create all the necessary DB tables. Optionally, use <code>psql</code> to check your work.</p>
+</li>
+<li>
+<p>Create a production frontend build by running <code>npm run release</code>, which specifies a base prefix for all paths. This should match whatever path you're expecting to serve your static assets from. In this case, <code>/welc</code> as the base allows the static files to be served from <code>$SERVER_NAME.$TAILSCALE_NAME.ts.net/welc</code>.</p>
+</li>
+<li>
+<p>You need to add two sections to your <code>Caddyfile</code> (if it already exists - if not, create one and an associated systemd service):</p>
+<div class="highlight"><pre><span></span><code>$SERVER_NAME.$TAILSCALE_NAME.ts.net {
+
+  ...
+
+  handle /welc/api/* {
+    uri strip_prefix /welc
+    reverse_proxy localhost:$PORT
+  }
+
+  ...
+
+  file_server
+  root /path/to/root
+}
+</code></pre></div>
+
+<p>The first section tells Caddy how to reverse-proxy requests to the backend. You should specify a port where <a href="https://gunicorn.org/">gunicorn</a> will be running in step 9. The second (which may already exist) will clarify where you need to move the files in the next step.</p>
+</li>
+<li>
+<p>The frontend build output should be in the project folder under <code>/dist</code>. Move the contents from there to wherever Caddy will look for it (in our case, <code>/path/to/root/welc</code> next to other project static sites.)</p>
+</li>
+<li>
+<p>From inside the venv, run gunicorn manually just to make sure everything is hooked together properly: <code>PORT=$PORT gunicorn app:app -w 4</code></p>
+</li>
+<li>
+<p>Visit WeLC on the web at <code>$SERVER_NAME.TAILSCALE_NAME.ts.net/welc</code> and verify that you can play files from both tabs. If not, troubleshoot via system logs and the browser Dev Tools.</p>
+</li>
+<li>
+<p>Shut down gunicorn and set up a systemd <code>welc.service</code><sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> to run it automatically. I ended up with something like this<sup id="fnref:2"><a class="footnote-ref" href="#fn:2">2</a></sup>:</p>
+<div class="highlight"><pre><span></span><code><span class="k">[Unit]</span>
+<span class="na">Description</span><span class="o">=</span><span class="s">gunicorn daemon for welc</span>
+<span class="na">After</span><span class="o">=</span><span class="s">network.target</span>
+
+<span class="k">[Service]</span>
+<span class="na">Type</span><span class="o">=</span><span class="s">notify</span>
+<span class="na">NotifyAccess</span><span class="o">=</span><span class="s">main</span>
+<span class="na">User</span><span class="o">=</span><span class="s">$SERVER_USER</span>
+<span class="na">Group</span><span class="o">=</span><span class="s">$SERVER_GROUP</span>
+<span class="na">WorkingDirectory</span><span class="o">=</span><span class="s">/path/to/projects/welc/api</span>
+<span class="na">EnvironmentFile</span><span class="o">=</span><span class="s">/path/to/projects/welc/.env.production</span>
+<span class="na">Environment</span><span class="o">=</span><span class="s">&quot;PORT=$PORT&quot;</span>
+<span class="na">ExecStart</span><span class="o">=</span><span class="s">/path/to/projects/welc/api/.venv/bin/gunicorn --workers 3 app:app</span>
+<span class="na">ExecReload</span><span class="o">=</span><span class="s">/bin/kill -s HUP $MAINPID</span>
+<span class="na">KillMode</span><span class="o">=</span><span class="s">mixed</span>
+<span class="na">TimeoutStopSec</span><span class="o">=</span><span class="s">5</span>
+<span class="na">Restart</span><span class="o">=</span><span class="s">always</span>
+<span class="na">PrivateTmp</span><span class="o">=</span><span class="s">true</span>
+
+<span class="k">[Install]</span>
+<span class="na">WantedBy</span><span class="o">=</span><span class="s">multi-user.target</span>
+</code></pre></div>
+
+<p>Update User, Group, and PORT with the correct values, and replace the paths with your system's paths. </p>
+</li>
+<li>
+<p>Reload everything with <code>systemctl daemon-reload</code>, then start the service with <code>systemctl start welc</code>. Set it to start on boot with <code>systemctl enable welc</code>. Check that all is going well with <code>systemctl status welc</code>. Go back to the web and verify that everything is working as expected.</p>
+</li>
+</ol>
+<p>That's a lot, and it's pretty attuned to our specific setup, but I wanted to document it for myself, if nothing else. Along the way I discovered some bugs and potential enhancements that I should work on next. I also plan to collect the above process into a script that I can run every time I want to deploy a new version of the program.</p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p>On our machine, user-created service files are kept under version control and symlinked into <code>/etc/systemd/system</code>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
+</li>
+<li id="fn:2">
+<p>I found the <a href="https://systemd.io/">official systemd site</a> extremely useless and preferred looking up settings <a href="https://www.freedesktop.org/software/systemd/man/latest/systemd.directives.html">here</a>.&#160;<a class="footnote-backref" href="#fnref:2" title="Jump back to footnote 2 in the text">&#8617;</a></p>
+</li>
+</ol>
+</div>
+    </div><!-- /.entry-content -->
+  </div>
+</section>
+<div class="prev post-info">
+ </div> <div class="next post-info">
+</div>
+
+    </div>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Third party plugin JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="/theme/js/scripts.js"></script>
+    <script async defer src="https://www.recurse-scout.com/loader.js?t=f48eec73f6cf0a45269638ef5f36903b"></script>
+  </body>
+
+</html>
